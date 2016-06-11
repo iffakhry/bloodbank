@@ -1,0 +1,1767 @@
+<!DOCTYPE html>
+<!--
+Copyright 2013 ngengs.
+
+Licensed under the Apache License, Version 2.0 (the "License");
+you may not use this file except in compliance with the License.
+You may obtain a copy of the License at
+
+     http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
+-->
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black">
+        <title>Cari Darah</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width">
+        <!--        <link rel="stylesheet" href="assets/css/jquery.mobile-1.3.2.css">
+                <link rel="stylesheet" href="assets/css/jquery.mobile.theme-1.3.2.css">     -->
+        <link rel="stylesheet" href="assets/css/jquery.mobile-1.3.1.css">
+
+    </head>
+    <body>
+        <div data-role="page" id="page-splash">
+
+            <div data-role="content" id="content-home">
+                <div style="position: absolute; background-color: #fff; width:100%;height:100%;border: 1px solid #b8b8b8;text-align: center">
+                    <img src="assets/images/blood.jpg" alt="image" style="position: absolute;top: 40%; left: 40%;">
+                    <h1>Loading...</h1>
+                </div>
+
+            </div>
+        </div>
+
+        <div data-role="page" id="page-home">
+            <div data-role="header">
+                <a data-role="button" href="#setting" data-icon="gear" data-iconpos="notext"
+                   class="ui-btn-right">&nbsp;
+                </a>
+                <h3>
+                    Cari Darah
+                </h3>
+            </div>
+            <div data-role="content" id="content-home">
+                <div style="position: relative; background-color: #fff; border: 1px solid #b8b8b8;text-align: center">
+                    <img src="assets/images/blood.jpg" alt="image" style="top: 50%; left: 50%;">
+                </div>
+                <a data-role="button" data-theme="a" href="#ayp-cari" id="btn-ayo-cari">
+                    Ayo Cari
+                </a>
+                <form action="" method="POST" id="ayo-cari" style="display: none" data-ajax="false">
+                    <div data-role="fieldcontain">
+                        <label for="selectmenu1">
+                            Golongan Darah:
+                        </label>
+                        <select id="selectmenu1" name="darah" class="select-darah">
+                            <option value="ap">
+                                A+
+                            </option>
+                            <option value="an">
+                                A-
+                            </option>
+                            <option value="bp">
+                                B+
+                            </option>
+                            <option value="bn">
+                                B-
+                            </option>
+                            <option value="abp">
+                                AB+
+                            </option>
+                            <option value="abn">
+                                AB-
+                            </option>
+                            <option value="op">
+                                O+
+                            </option>
+                            <option value="on">
+                                O-
+                            </option>
+                        </select>
+                    </div>
+
+
+                    <br>
+                    <ul id="cari-kota" data-role="listview" data-inset="true" data-filter="true" data-filter-reveal="true" data-filter-placeholder="Pilih Kota..."  data-filter-theme="a">
+                        <li><a href="#" data-val="1">Aek Kanopan</a></li>
+                        <li><a href="#" data-val="2">Arga Makmur</a></li>
+                        <li><a href="#" data-val="3">Arosuka</a></li>
+                        <li><a href="#" data-val="4">Balige</a></li>
+                        <li><a href="#" data-val="5">Banda Aceh</a></li>
+                        <li><a href="#" data-val="6">Bandar Lampung</a></li>
+                        <li><a href="#" data-val="7">Bagansiapiapi</a></li>
+                        <li><a href="#" data-val="8">Baganbatu</a></li>
+                        <li><a href="#" data-val="9">Bandar Seri Bentan</a></li>
+                        <li><a href="#" data-val="10">Bangkinang</a></li>
+                        <li><a href="#" data-val="11">Bangko</a></li>
+                        <li><a href="#" data-val="12">Banyuasin</a></li>
+                        <li><a href="#" data-val="13">Batam</a></li>
+                        <li><a href="#" data-val="14">Baturaja</a></li>
+                        <li><a href="#" data-val="15">Batusangkar</a></li>
+                        <li><a href="#" data-val="16">Bengkalis</a></li>
+                        <li><a href="#" data-val="17">Bengkulu</a></li>
+                        <li><a href="#" data-val="18">Binjai</a></li>
+                        <li><a href="#" data-val="19">Bintuhan</a></li>
+                        <li><a href="#" data-val="20">Bireuen</a></li>
+                        <li><a href="#" data-val="21">Blambangan Umpu</a></li>
+                        <li><a href="#" data-val="22">Blangpidie</a></li>
+                        <li><a href="#" data-val="23">Blang Kejeren</a></li>
+                        <li><a href="#" data-val="24">Bukittinggi</a></li>
+                        <li><a href="#" data-val="25">Calang</a></li>
+                        <li><a href="#" data-val="26">Curup</a></li>
+                        <li><a href="#" data-val="27">Daik</a></li>
+                        <li><a href="#" data-val="28">Dolok Marawa</a></li>
+                        <li><a href="#" data-val="29">Dumai</a></li>
+                        <li><a href="#" data-val="30">Gedong Tataan</a></li>
+                        <li><a href="#" data-val="31">Gunung Sitoli</a></li>
+                        <li><a href="#" data-val="32">Gunun Sugih</a></li>
+                        <li><a href="#" data-val="33">Gunung Tua</a></li>
+                        <li><a href="#" data-val="34">Idi Rayeuk</a></li>
+                        <li><a href="#" data-val="35">Indralaya</a></li>
+                        <li><a href="#" data-val="36">Jambi</a></li>
+                        <li><a href="#" data-val="37">Jantho</a></li>
+                        <li><a href="#" data-val="38">Kabanjahe</a></li>
+                        <li><a href="#" data-val="39">Kalianda</a></li>
+                        <li><a href="#" data-val="40">Karang Baru</a></li>
+                        <li><a href="#" data-val="41">Karang Tinggi</a></li>
+                        <li><a href="#" data-val="42">Kayu Agung</a></li>
+                        <li><a href="#" data-val="43">Kepahiang</a></li>
+                        <li><a href="#" data-val="44">Kisaran</a></li>
+                        <li><a href="#" data-val="45">Koba</a></li>
+                        <li><a href="#" data-val="46">Kota Agung</a></li>
+                        <li><a href="#" data-val="47">Kota Bumi</a></li>
+                        <li><a href="#" data-val="48">Kota Pinang</a></li>
+                        <li><a href="#" data-val="49">Kuala Tungkal</a></li>
+                        <li><a href="#" data-val="50">Kutacane</a></li>
+                        <li><a href="#" data-val="51">Lahat</a></li>
+                        <li><a href="#" data-val="52">Lahomi</a></li>
+                        <li><a href="#" data-val="53">Langsa</a></li>
+                        <li><a href="#" data-val="54">Lhokseumawe</a></li>
+                        <li><a href="#" data-val="55">Lhoksukon</a></li>
+                        <li><a href="#" data-val="56">Limapuluh</a></li>
+                        <li><a href="#" data-val="57">Liwa</a></li>
+                        <li><a href="#" data-val="58">Lotu</a></li>
+                        <li><a href="#" data-val="59">Lubuk Basung</a></li>
+                        <li><a href="#" data-val="60">Lubuk Bendaharo</a></li>
+                        <li><a href="#" data-val="61">Lubuk Linggau</a></li>
+                        <li><a href="#" data-val="62">Lubuk Pakam</a></li>
+                        <li><a href="#" data-val="63">Lubuk Sikaping</a></li>
+                        <li><a href="#" data-val="64">Manggar</a></li>
+                        <li><a href="#" data-val="65">Manna</a></li>
+                        <li><a href="#" data-val="66">Martapura</a></li>
+                        <li><a href="#" data-val="67">Medan</a></li>
+                        <li><a href="#" data-val="68">Menggala</a></li>
+                        <li><a href="#" data-val="69">Mentok</a></li>
+                        <li><a href="#" data-val="70">Metro</a></li>
+                        <li><a href="#" data-val="71">Meulaboh</a></li>
+                        <li><a href="#" data-val="72">Meureude</a></li>
+                        <li><a href="#" data-val="73">Muara Aman</a></li>
+                        <li><a href="#" data-val="74">Muara Bulian</a></li>
+                        <li><a href="#" data-val="75">Muara Bungo</a></li>
+                        <li><a href="#" data-val="76">Muara Dua</a></li>
+                        <li><a href="#" data-val="77">Muara Enim</a></li>
+                        <li><a href="#" data-val="78">Muara Sabak</a></li>
+                        <li><a href="#" data-val="79">Muara Tebo</a></li>
+                        <li><a href="#" data-val="80">Muaro Sijunjung</a></li>
+                        <li><a href="#" data-val="81">Muko Muko</a></li>
+                        <li><a href="#" data-val="82">Padang</a></li>
+                        <li><a href="#" data-val="83">Padang Aro</a></li>
+                        <li><a href="#" data-val="84">Padang Panjang</a></li>
+                        <li><a href="#" data-val="85">Padang Sidempuan</a></li>
+                        <li><a href="#" data-val="86">Pagaralam</a></li>
+                        <li><a href="#" data-val="87">Painan</a></li>
+                        <li><a href="#" data-val="88">Palembang</a></li>
+                        <li><a href="#" data-val="89">Pandan</a></li>
+                        <li><a href="#" data-val="90">Pangkalan Kerinci</a></li>
+                        <li><a href="#" data-val="91">Pangkal Pinang</a></li>
+                        <li><a href="#" data-val="92">Panguruan</a></li>
+                        <li><a href="#" data-val="93">Panyabungan</a></li>
+                        <li><a href="#" data-val="94">Pariaman</a></li>
+                        <li><a href="#" data-val="95">Parit Malintang</a></li>
+                        <li><a href="#" data-val="96">Pasir Pengarayan</a></li>
+                        <li><a href="#" data-val="97">Payakumbuh</a></li>
+                        <li><a href="#" data-val="98">Pekanbaru</a></li>
+                        <li><a href="#" data-val="99">Pematang Siantar</a></li>
+                        <li><a href="#" data-val="100">Prabumulih</a></li>
+                        <li><a href="#" data-val="101">Pringsewu</a></li>
+                        <li><a href="#" data-val="102">Pulau Punjung</a></li>
+                        <li><a href="#" data-val="103">Ranai</a></li>
+                        <li><a href="#" data-val="104">Rantau Prapat</a></li>
+                        <li><a href="#" data-val="105">Raya</a></li>
+                        <li><a href="#" data-val="106">Rengat</a></li>
+                        <li><a href="#" data-val="107">Sabang</a></li>
+                        <li><a href="#" data-val="108">Salak</a></li>
+                        <li><a href="#" data-val="109">Sarilamak</a></li>
+                        <li><a href="#" data-val="110">Sarolangun</a></li>
+                        <li><a href="#" data-val="111">Sawahlunto</a></li>
+                        <li><a href="#" data-val="112">Sei Rampah</a></li>
+                        <li><a href="#" data-val="113">Sekayu</a></li>
+                        <li><a href="#" data-val="114">Selat Panjang</a></li>
+                        <li><a href="#" data-val="115">Sengeti</a></li>
+                        <li><a href="#" data-val="116">Siak Sri Indrapura</a></li>
+                        <li><a href="#" data-val="117">Sibolga</a></li>
+                        <li><a href="#" data-val="118">Sibuhuan</a></li>
+                        <li><a href="#" data-val="119">Sidikalang</a></li>
+                        <li><a href="#" data-val="120">Sigli</a></li>
+                        <li><a href="#" data-val="121">Simpang Empat</a></li>
+                        <li><a href="#" data-val="122">Simpang Tiga Redelong</a></li>
+                        <li><a href="#" data-val="123">Sinabang</a></li>
+                        <li><a href="#" data-val="124">Singkil</a></li>
+                        <li><a href="#" data-val="125">Sipirok</a></li>
+                        <li><a href="#" data-val="126">Solok</a></li>
+                        <li><a href="#" data-val="127">Stabat</a></li>
+                        <li><a href="#" data-val="128">Subulussalam</a></li>
+                        <li><a href="#" data-val="129">Sukadana</a></li>
+                        <li><a href="#" data-val="130">Suka Makmue</a></li>
+                        <li><a href="#" data-val="131">Sungailiat</a></li>
+                        <li><a href="#" data-val="132">Sungai Penuh</a></li>
+                        <li><a href="#" data-val="133">Takengon</a></li>
+                        <li><a href="#" data-val="134">Tais</a></li>
+                        <li><a href="#" data-val="135">Tanjung Balai</a></li>
+                        <li><a href="#" data-val="136">Tanjung Balai Karimun</a></li>
+                        <li><a href="#" data-val="137">Tanjung Enim</a></li>
+                        <li><a href="#" data-val="138">Tanjung Pandan</a></li>
+                        <li><a href="#" data-val="139">Tanjung Pinang</a></li>
+                        <li><a href="#" data-val="140">Tapaktuan</a></li>
+                        <li><a href="#" data-val="141">Tarempa</a></li>
+                        <li><a href="#" data-val="142">Tarutung</a></li>
+                        <li><a href="#" data-val="143">Tebing Tinggi</a></li>
+                        <li><a href="#" data-val="144">Tebing Tinggi</a></li>
+                        <li><a href="#" data-val="145">Teluk Dalam</a></li>
+                        <li><a href="#" data-val="146">Teluk Kuantan</a></li>
+                        <li><a href="#" data-val="147">Tembilahan</a></li>
+                        <li><a href="#" data-val="148">Toboali</a></li>
+                        <li><a href="#" data-val="149">Tuapejat</a></li>
+                        <li><a href="#" data-val="150">Ujung Tanjung</a></li>
+                        <li><a href="#" data-val="151">Bandung</a></li>
+                        <li><a href="#" data-val="152">Bangil</a></li>
+                        <li><a href="#" data-val="153">Banjar</a></li>
+                        <li><a href="#" data-val="154">Banjarnegara</a></li>
+                        <li><a href="#" data-val="155">Bangkalan</a></li>
+                        <li><a href="#" data-val="156">Bantul</a></li>
+                        <li><a href="#" data-val="157">Banyumas</a></li>
+                        <li><a href="#" data-val="158">Banyuwangi</a></li>
+                        <li><a href="#" data-val="159">Batang</a></li>
+                        <li><a href="#" data-val="160">Batu</a></li>
+                        <li><a href="#" data-val="161">Bekasi</a></li>
+                        <li><a href="#" data-val="162">Blitar</a></li>
+                        <li><a href="#" data-val="163">Blora</a></li>
+                        <li><a href="#" data-val="164">Bogor</a></li>
+                        <li><a href="#" data-val="165">Bojonegoro</a></li>
+                        <li><a href="#" data-val="166">Bondowoso</a></li>
+                        <li><a href="#" data-val="167">Boyolali</a></li>
+                        <li><a href="#" data-val="168">Bumiayu</a></li>
+                        <li><a href="#" data-val="169">Brebes</a></li>
+                        <li><a href="#" data-val="170">Cianjur</a></li>
+                        <li><a href="#" data-val="171">Ciamis</a></li>
+                        <li><a href="#" data-val="172">Cibinong</a></li>
+                        <li><a href="#" data-val="173">Cikampek</a></li>
+                        <li><a href="#" data-val="174">Cikarang</a></li>
+                        <li><a href="#" data-val="175">Cilacap</a></li>
+                        <li><a href="#" data-val="176">Cilegon</a></li>
+                        <li><a href="#" data-val="177">Cirebon</a></li>
+                        <li><a href="#" data-val="178">Demak</a></li>
+                        <li><a href="#" data-val="179">Depok</a></li>
+                        <li><a href="#" data-val="180">Garut</a></li>
+                        <li><a href="#" data-val="181">Gresik</a></li>
+                        <li><a href="#" data-val="182">Indramayu</a></li>
+                        <li><a href="#" data-val="183">Jakarta</a></li>
+                        <li><a href="#" data-val="184">Jember</a></li>
+                        <li><a href="#" data-val="185">Jepara</a></li>
+                        <li><a href="#" data-val="186">Jombang</a></li>
+                        <li><a href="#" data-val="187">Kajen</a></li>
+                        <li><a href="#" data-val="188">Karanganyar</a></li>
+                        <li><a href="#" data-val="189">Kebumen</a></li>
+                        <li><a href="#" data-val="190">Kediri</a></li>
+                        <li><a href="#" data-val="191">Kendal</a></li>
+                        <li><a href="#" data-val="192">Kepanjen</a></li>
+                        <li><a href="#" data-val="193">Klaten</a></li>
+                        <li><a href="#" data-val="194">Kraksaan</a></li>
+                        <li><a href="#" data-val="195">Kudus</a></li>
+                        <li><a href="#" data-val="196">Kuningan</a></li>
+                        <li><a href="#" data-val="197">Lamongan</a></li>
+                        <li><a href="#" data-val="198">Lumajang</a></li>
+                        <li><a href="#" data-val="199">Madiun</a></li>
+                        <li><a href="#" data-val="200">Magelang</a></li>
+                        <li><a href="#" data-val="201">Magetan</a></li>
+                        <li><a href="#" data-val="202">Majalengka</a></li>
+                        <li><a href="#" data-val="203">Malang</a></li>
+                        <li><a href="#" data-val="204">Mojokerto</a></li>
+                        <li><a href="#" data-val="205">Mungkid</a></li>
+                        <li><a href="#" data-val="206">Ngamprah</a></li>
+                        <li><a href="#" data-val="207">Nganjuk</a></li>
+                        <li><a href="#" data-val="208">Ngawi</a></li>
+                        <li><a href="#" data-val="209">Pacitan</a></li>
+                        <li><a href="#" data-val="210">Pamekasan</a></li>
+                        <li><a href="#" data-val="211">Pandeglang</a></li>
+                        <li><a href="#" data-val="212">Pare</a></li>
+                        <li><a href="#" data-val="213">Pati</a></li>
+                        <li><a href="#" data-val="214">Pasuruan</a></li>
+                        <li><a href="#" data-val="215">Pekalongan</a></li>
+                        <li><a href="#" data-val="216">Pelabuhan Ratu</a></li>
+                        <li><a href="#" data-val="217">Pemalang</a></li>
+                        <li><a href="#" data-val="218">Ponorogo</a></li>
+                        <li><a href="#" data-val="219">Probolinggo</a></li>
+                        <li><a href="#" data-val="220">Purbalingga</a></li>
+                        <li><a href="#" data-val="221">Purwakarta</a></li>
+                        <li><a href="#" data-val="222">Purwodadi</a></li>
+                        <li><a href="#" data-val="223">Purwokerto</a></li>
+                        <li><a href="#" data-val="224">Purworejo</a></li>
+                        <li><a href="#" data-val="225">Rangkasbitung</a></li>
+                        <li><a href="#" data-val="226">Rembang</a></li>
+                        <li><a href="#" data-val="227">Salatiga</a></li>
+                        <li><a href="#" data-val="228">Sampang</a></li>
+                        <li><a href="#" data-val="229">Semarang</a></li>
+                        <li><a href="#" data-val="230">Serang</a></li>
+                        <li><a href="#" data-val="231">Sidayu</a></li>
+                        <li><a href="#" data-val="232">Sidoarjo</a></li>
+                        <li><a href="#" data-val="233">Singaparna</a></li>
+                        <li><a href="#" data-val="234">Situbondo</a></li>
+                        <li><a href="#" data-val="235">Slawi</a></li>
+                        <li><a href="#" data-val="236">Sleman</a></li>
+                        <li><a href="#" data-val="237">Soreang</a></li>
+                        <li><a href="#" data-val="238">Sragen</a></li>
+                        <li><a href="#" data-val="239">Subang</a></li>
+                        <li><a href="#" data-val="240">Sukabumi</a></li>
+                        <li><a href="#" data-val="241">Sukoharjo</a></li>
+                        <li><a href="#" data-val="242">Sumber</a></li>
+                        <li><a href="#" data-val="243">Sumedang</a></li>
+                        <li><a href="#" data-val="244">Sumenep</a></li>
+                        <li><a href="#" data-val="245">Surabaya</a></li>
+                        <li><a href="#" data-val="246">Surakarta</a></li>
+                        <li><a href="#" data-val="247">Tasikmalaya</a></li>
+                        <li><a href="#" data-val="248">Tangerang</a></li>
+                        <li><a href="#" data-val="249">Tangerang Selatan</a></li>
+                        <li><a href="#" data-val="250">Tegal</a></li>
+                        <li><a href="#" data-val="251">Temanggung</a></li>
+                        <li><a href="#" data-val="252">Tigaraksa</a></li>
+                        <li><a href="#" data-val="253">Trenggalek</a></li>
+                        <li><a href="#" data-val="254">Tuban</a></li>
+                        <li><a href="#" data-val="255">Tulung Agung</a></li>
+                        <li><a href="#" data-val="256">Ungaran</a></li>
+                        <li><a href="#" data-val="257">Wates</a></li>
+                        <li><a href="#" data-val="258">Wlingi</a></li>
+                        <li><a href="#" data-val="259">Wonogiri</a></li>
+                        <li><a href="#" data-val="260">Wonosari</a></li>
+                        <li><a href="#" data-val="261">Wonosobo</a></li>
+                        <li><a href="#" data-val="262">Yogyakarta</a></li>
+                        <li><a href="#" data-val="263">Atambua</a></li>
+                        <li><a href="#" data-val="264">Baa</a></li>
+                        <li><a href="#" data-val="265">Badung</a></li>
+                        <li><a href="#" data-val="266">Bajawa</a></li>
+                        <li><a href="#" data-val="267">Bangli</a></li>
+                        <li><a href="#" data-val="268">Bima</a></li>
+                        <li><a href="#" data-val="269">Denpasar</a></li>
+                        <li><a href="#" data-val="270">Dompu</a></li>
+                        <li><a href="#" data-val="271">Ende</a></li>
+                        <li><a href="#" data-val="272">Gianyar</a></li>
+                        <li><a href="#" data-val="273">Kalabahi</a></li>
+                        <li><a href="#" data-val="274">Karangasem</a></li>
+                        <li><a href="#" data-val="275">Kefamenanu</a></li>
+                        <li><a href="#" data-val="276">Klungkung</a></li>
+                        <li><a href="#" data-val="277">Kupang</a></li>
+                        <li><a href="#" data-val="278">Labuhan Bajo</a></li>
+                        <li><a href="#" data-val="279">Larantuka</a></li>
+                        <li><a href="#" data-val="280">Lewoleba</a></li>
+                        <li><a href="#" data-val="281">Maumere</a></li>
+                        <li><a href="#" data-val="282">Mataram</a></li>
+                        <li><a href="#" data-val="283">Mbay</a></li>
+                        <li><a href="#" data-val="284">Negara</a></li>
+                        <li><a href="#" data-val="285">Praya</a></li>
+                        <li><a href="#" data-val="286">Raba</a></li>
+                        <li><a href="#" data-val="287">Ruteng</a></li>
+                        <li><a href="#" data-val="288">Selong</a></li>
+                        <li><a href="#" data-val="289">Singaraja</a></li>
+                        <li><a href="#" data-val="290">Soe</a></li>
+                        <li><a href="#" data-val="291">Sumbawa Besar</a></li>
+                        <li><a href="#" data-val="292">Tabanan</a></li>
+                        <li><a href="#" data-val="293">Taliwang</a></li>
+                        <li><a href="#" data-val="294">Tambolaka</a></li>
+                        <li><a href="#" data-val="295">Tanjung</a></li>
+                        <li><a href="#" data-val="296">Waibakul</a></li>
+                        <li><a href="#" data-val="297">Waikabubak</a></li>
+                        <li><a href="#" data-val="298">Waingapu</a></li>
+                        <li><a href="#" data-val="299">Pontianak</a></li>
+                        <li><a href="#" data-val="300">Samarinda</a></li>
+                        <li><a href="#" data-val="301">Banjarmasin</a></li>
+                        <li><a href="#" data-val="302">Balikpapan</a></li>
+                        <li><a href="#" data-val="303">Singkawang</a></li>
+                        <li><a href="#" data-val="304">Palangkaraya</a></li>
+                        <li><a href="#" data-val="305">Mempawah</a></li>
+                        <li><a href="#" data-val="306">Ketapang</a></li>
+                        <li><a href="#" data-val="307">Sintang</a></li>
+                        <li><a href="#" data-val="308">Tarakan</a></li>
+                        <li><a href="#" data-val="309">Putussibau</a></li>
+                        <li><a href="#" data-val="310">Sambas</a></li>
+                        <li><a href="#" data-val="311">Sampit</a></li>
+                        <li><a href="#" data-val="312">Banjarbaru</a></li>
+                        <li><a href="#" data-val="313">Barabai</a></li>
+                        <li><a href="#" data-val="314">Batang Tarang</a></li>
+                        <li><a href="#" data-val="315">Batulicin</a></li>
+                        <li><a href="#" data-val="316">Bengkayang</a></li>
+                        <li><a href="#" data-val="317">Bontang</a></li>
+                        <li><a href="#" data-val="318">Buntok</a></li>
+                        <li><a href="#" data-val="319">Kandangan</a></li>
+                        <li><a href="#" data-val="320">Kotabaru</a></li>
+                        <li><a href="#" data-val="321">Kuala Kapuas</a></li>
+                        <li><a href="#" data-val="322">Kuala Kurun</a></li>
+                        <li><a href="#" data-val="323">Kuala Pembuang</a></li>
+                        <li><a href="#" data-val="324">Malinau</a></li>
+                        <li><a href="#" data-val="325">Marabahan</a></li>
+                        <li><a href="#" data-val="326">Martapura</a></li>
+                        <li><a href="#" data-val="327">Muara Teweh</a></li>
+                        <li><a href="#" data-val="328">Nanga Bulik</a></li>
+                        <li><a href="#" data-val="329">Nanga Pinoh</a></li>
+                        <li><a href="#" data-val="330">Ngabang</a></li>
+                        <li><a href="#" data-val="331">Nunukan</a></li>
+                        <li><a href="#" data-val="332">Pangkalan Bun</a></li>
+                        <li><a href="#" data-val="333">Paringin</a></li>
+                        <li><a href="#" data-val="334">Pelaihari</a></li>
+                        <li><a href="#" data-val="335">Penajam</a></li>
+                        <li><a href="#" data-val="336">Pulang Pisau</a></li>
+                        <li><a href="#" data-val="337">Purukcahu</a></li>
+                        <li><a href="#" data-val="338">Rantau</a></li>
+                        <li><a href="#" data-val="339">Sangatta</a></li>
+                        <li><a href="#" data-val="340">Sekadau</a></li>
+                        <li><a href="#" data-val="341">Sendawar</a></li>
+                        <li><a href="#" data-val="342">Sukadana</a></li>
+                        <li><a href="#" data-val="343">Sukamara</a></li>
+                        <li><a href="#" data-val="344">Sungai Raya</a></li>
+                        <li><a href="#" data-val="345">Tamiang Layang</a></li>
+                        <li><a href="#" data-val="346">Tanah Grogot</a></li>
+                        <li><a href="#" data-val="347">Tanjung</a></li>
+                        <li><a href="#" data-val="348">Tanjung Selor</a></li>
+                        <li><a href="#" data-val="349">Tanjung Redeb</a></li>
+                        <li><a href="#" data-val="350">Tenggarong</a></li>
+                        <li><a href="#" data-val="351">Tideng Pale</a></li>
+                        <li><a href="#" data-val="352">Airmadidi</a></li>
+                        <li><a href="#" data-val="353">Ampana</a></li>
+                        <li><a href="#" data-val="354">Amurang</a></li>
+                        <li><a href="#" data-val="355">Andolo</a></li>
+                        <li><a href="#" data-val="356">Banggai</a></li>
+                        <li><a href="#" data-val="357">Bantaeng</a></li>
+                        <li><a href="#" data-val="358">Barru</a></li>
+                        <li><a href="#" data-val="359">Bau-Bau</a></li>
+                        <li><a href="#" data-val="360">Benteng</a></li>
+                        <li><a href="#" data-val="361">Bitung</a></li>
+                        <li><a href="#" data-val="362">Bolaang Uki</a></li>
+                        <li><a href="#" data-val="363">Boroko</a></li>
+                        <li><a href="#" data-val="364">Bulukumba</a></li>
+                        <li><a href="#" data-val="365">Bungku</a></li>
+                        <li><a href="#" data-val="366">Buol</a></li>
+                        <li><a href="#" data-val="367">Buranga</a></li>
+                        <li><a href="#" data-val="368">Donggala</a></li>
+                        <li><a href="#" data-val="369">Enrekang</a></li>
+                        <li><a href="#" data-val="370">Gorontalo</a></li>
+                        <li><a href="#" data-val="371">Jeneponto</a></li>
+                        <li><a href="#" data-val="372">Kawangkoan</a></li>
+                        <li><a href="#" data-val="373">Kendari</a></li>
+                        <li><a href="#" data-val="374">Kolaka</a></li>
+                        <li><a href="#" data-val="375">Kotamobagu</a></li>
+                        <li><a href="#" data-val="376">Kwandang</a></li>
+                        <li><a href="#" data-val="377">Lasusua</a></li>
+                        <li><a href="#" data-val="378">Luwuk</a></li>
+                        <li><a href="#" data-val="379">Majene</a></li>
+                        <li><a href="#" data-val="380">Makale</a></li>
+                        <li><a href="#" data-val="381">Makassar</a></li>
+                        <li><a href="#" data-val="382">Malili</a></li>
+                        <li><a href="#" data-val="383">Mamasa</a></li>
+                        <li><a href="#" data-val="384">Mamuju</a></li>
+                        <li><a href="#" data-val="385">Manado</a></li>
+                        <li><a href="#" data-val="386">Marisa</a></li>
+                        <li><a href="#" data-val="387">Maros</a></li>
+                        <li><a href="#" data-val="388">Masamba</a></li>
+                        <li><a href="#" data-val="389">Melonguane</a></li>
+                        <li><a href="#" data-val="390">Ondong Siau</a></li>
+                        <li><a href="#" data-val="391">Palopo</a></li>
+                        <li><a href="#" data-val="392">Palu</a></li>
+                        <li><a href="#" data-val="393">Pangkajene</a></li>
+                        <li><a href="#" data-val="394">Pare-Pare</a></li>
+                        <li><a href="#" data-val="395">Parigi</a></li>
+                        <li><a href="#" data-val="396">Pasangkayu</a></li>
+                        <li><a href="#" data-val="397">Pinrang</a></li>
+                        <li><a href="#" data-val="398">Polewali</a></li>
+                        <li><a href="#" data-val="399">Poso</a></li>
+                        <li><a href="#" data-val="400">Raha</a></li>
+                        <li><a href="#" data-val="401">Rantepao</a></li>
+                        <li><a href="#" data-val="402">Ratahan</a></li>
+                        <li><a href="#" data-val="403">Rumbia</a></li>
+                        <li><a href="#" data-val="404">Sengkang</a></li>
+                        <li><a href="#" data-val="405">Sidenreng</a></li>
+                        <li><a href="#" data-val="406">Sigi Biromaru</a></li>
+                        <li><a href="#" data-val="407">Sinjai</a></li>
+                        <li><a href="#" data-val="408">Sunggu Minasa</a></li>
+                        <li><a href="#" data-val="409">Suwawa</a></li>
+                        <li><a href="#" data-val="410">Tahuna</a></li>
+                        <li><a href="#" data-val="411">Takalar</a></li>
+                        <li><a href="#" data-val="412">Tilamuta</a></li>
+                        <li><a href="#" data-val="413">Toli Toli</a></li>
+                        <li><a href="#" data-val="414">Tomohon</a></li>
+                        <li><a href="#" data-val="415">Tondano</a></li>
+                        <li><a href="#" data-val="416">Tutuyan</a></li>
+                        <li><a href="#" data-val="417">Unaaha</a></li>
+                        <li><a href="#" data-val="418">Wangi Wangi</a></li>
+                        <li><a href="#" data-val="419">Wanggudu</a></li>
+                        <li><a href="#" data-val="420">Watampone</a></li>
+                        <li><a href="#" data-val="421">Watan Soppeng</a></li>
+                        <li><a href="#" data-val="422">Cliquers</a></li>
+                        <li><a href="#" data-val="423">Libuo Palma</a></li>
+                        <li><a href="#" data-val="424">Agats</a></li>
+                        <li><a href="#" data-val="425">Ambon</a></li>
+                        <li><a href="#" data-val="426">Banda</a></li>
+                        <li><a href="#" data-val="427">Biak</a></li>
+                        <li><a href="#" data-val="428">Bintuni</a></li>
+                        <li><a href="#" data-val="429">Botawa</a></li>
+                        <li><a href="#" data-val="430">Burmeso</a></li>
+                        <li><a href="#" data-val="431">Dataran Hunimoa</a></li>
+                        <li><a href="#" data-val="432">Dataran Hunipopu</a></li>
+                        <li><a href="#" data-val="433">Dobo</a></li>
+                        <li><a href="#" data-val="434">Elelim</a></li>
+                        <li><a href="#" data-val="435">Enarotali</a></li>
+                        <li><a href="#" data-val="436">Fak Fak</a></li>
+                        <li><a href="#" data-val="437">Fef</a></li>
+                        <li><a href="#" data-val="438">Ilaga</a></li>
+                        <li><a href="#" data-val="439">Jailolo</a></li>
+                        <li><a href="#" data-val="440">Jayapura</a></li>
+                        <li><a href="#" data-val="441">Kaimana</a></li>
+                        <li><a href="#" data-val="442">Karubaga</a></li>
+                        <li><a href="#" data-val="443">Kenyam</a></li>
+                        <li><a href="#" data-val="444">Kepi</a></li>
+                        <li><a href="#" data-val="445">Kigamani</a></li>
+                        <li><a href="#" data-val="446">Kisar</a></li>
+                        <li><a href="#" data-val="447">Kobakma</a></li>
+                        <li><a href="#" data-val="448">Kota Mulia</a></li>
+                        <li><a href="#" data-val="449">Kumurkek</a></li>
+                        <li><a href="#" data-val="450">Labuha</a></li>
+                        <li><a href="#" data-val="451">Larat</a></li>
+                        <li><a href="#" data-val="452">Leksula</a></li>
+                        <li><a href="#" data-val="453">Maba</a></li>
+                        <li><a href="#" data-val="454">Manokwari</a></li>
+                        <li><a href="#" data-val="455">Masohi</a></li>
+                        <li><a href="#" data-val="456">Merauke</a></li>
+                        <li><a href="#" data-val="457">Morotai Selatan</a></li>
+                        <li><a href="#" data-val="458">Nabire</a></li>
+                        <li><a href="#" data-val="459">Namlea</a></li>
+                        <li><a href="#" data-val="460">Namrole</a></li>
+                        <li><a href="#" data-val="461">Oksibil</a></li>
+                        <li><a href="#" data-val="462">Oobo</a></li>
+                        <li><a href="#" data-val="463">Passo</a></li>
+                        <li><a href="#" data-val="464">Piru</a></li>
+                        <li><a href="#" data-val="465">Rasiei</a></li>
+                        <li><a href="#" data-val="466">Sanana</a></li>
+                        <li><a href="#" data-val="467">Saparua</a></li>
+                        <li><a href="#" data-val="468">Sarmi</a></li>
+                        <li><a href="#" data-val="469">Saumlaki</a></li>
+                        <li><a href="#" data-val="470">Sentani</a></li>
+                        <li><a href="#" data-val="471">Serui</a></li>
+                        <li><a href="#" data-val="472">Sorendiweri</a></li>
+                        <li><a href="#" data-val="473">Sorong</a></li>
+                        <li><a href="#" data-val="474">Sugapa</a></li>
+                        <li><a href="#" data-val="475">Sumohai</a></li>
+                        <li><a href="#" data-val="476">Tanah Merah</a></li>
+                        <li><a href="#" data-val="477">Teminabuan</a></li>
+                        <li><a href="#" data-val="478">Ternate</a></li>
+                        <li><a href="#" data-val="479">Tiakur</a></li>
+                        <li><a href="#" data-val="480">Tidore</a></li>
+                        <li><a href="#" data-val="481">Tigi</a></li>
+                        <li><a href="#" data-val="482">Timika</a></li>
+                        <li><a href="#" data-val="483">Tiom</a></li>
+                        <li><a href="#" data-val="484">Tobelo</a></li>
+                        <li><a href="#" data-val="485">Tual</a></li>
+                        <li><a href="#" data-val="486">Waisai</a></li>
+                        <li><a href="#" data-val="487">Wamena</a></li>
+                        <li><a href="#" data-val="488">Waris</a></li>
+                        <li><a href="#" data-val="489">Weda</a></li>
+
+                    </ul>
+                    <label for="text-18">Kota:</label>
+                    <input type="hidden" value="0" id="val-kota" name="kota">
+                    <input type="text" name="text-18" id="text-kota" value="cari kota" disabled="disabled">
+
+                    <input type="submit" data-theme="a" value="Submit">
+                </form>
+
+
+
+            </div>
+        </div>
+        <div data-role="page" id="page-content-list">
+            <div data-role="header">
+                <a data-role="button" href="#page-home" data-icon="gear" data-iconpos="notext"
+                   class="ui-btn-left" data-transition="flip">&nbsp;
+                </a>
+                <a data-role="button" href="#setting" data-icon="gear" data-iconpos="notext"
+                   class="ui-btn-right" data-transition="flip">&nbsp;
+                </a>
+                <h3 id="judul-cari">
+                    Cari Darah
+                </h3>
+            </div>
+            <div data-role="content" id="content-result-search">
+                <div style="position: relative; background-color: #fff; border: 1px solid #b8b8b8;text-align: center">
+                    <img src="assets/images/blood.jpg" alt="image" style="top: 50%; left: 50%;">
+                </div>
+                <div id="in-result">
+                    <ul id="list-orang" data-role="listview" data-filter="true" data-filter-placeholder="Nama Orang..." data-inset="true" data-theme="a"></ul>
+                </div>
+            </div>
+        </div>
+
+
+        <div data-role="page" id="setting">
+            <div data-role="header">
+                <a data-role="button" href="#page-home" data-icon="gear" data-iconpos="notext"
+                   class="ui-btn-left" data-transition="flip">&nbsp;
+                </a>
+                <h3 id="judul-setting">
+                    Setting
+                </h3>
+            </div>
+            <div data-role="content" id="content-setting">
+                <div style="position: relative; background-color: #fff; border: 1px solid #b8b8b8;text-align: center">
+                    <img src="assets/images/blood.jpg" alt="image" style="top: 50%; left: 50%;">
+                </div>
+                <div id="in-result">
+                    <a href="#login" data-role="button">Ubah Data Saya</a>
+                    <a href="#daftar" data-role="button">Daftar Pendonor</a>
+                </div>
+            </div>
+        </div>
+
+
+        <div data-role="page" id="login">
+            <div data-role="header">
+                <a data-role="button" href="#page-home" data-icon="gear" data-iconpos="notext"
+                   class="ui-btn-left" data-transition="flip">&nbsp;
+                </a>
+                <h3 id="judul-login">
+                    Login
+                </h3>
+            </div>
+            <div data-role="content" id="content-login">
+                <div style="position: relative; background-color: #fff; border: 1px solid #b8b8b8;text-align: center">
+                    <img src="assets/images/blood.jpg" alt="image" style="top: 50%; left: 50%;">
+                </div>
+                <div id="data-login">
+                    <form action="" method="POST" data-ajax="false" data-theme="a" id="form-login">
+                        <div data-role="fieldcontain">
+                            <h2 id="judul-login-h2">
+                                Login
+                            </h2>
+                        </div>
+                        <div data-role="fieldcontain">
+                            <label for="textinput1">
+                                Telpon
+                            </label>
+                            <input name="telpon" id="textinput1" placeholder="Telpon" value="" type="text">
+                        </div>
+                        <div data-role="fieldcontain">
+                            <label for="textinput2">
+                                Sandi
+                            </label>
+                            <input name="sandi" id="textinput2" placeholder="Password" value="" type="password">
+                        </div>
+                        <input type="submit" data-theme="a" value="Submit">
+                    </form>
+                </div>
+
+                <div id="data-edit" style="display:none">
+                    <form action="" method="POST" data-ajax="false" data-theme="a" id="form-edit">
+                        <div data-role="fieldcontain">
+                            <h2 id="judul-edit-h2">
+                                Edit Kota
+                            </h2>
+                        </div>
+                        <ul id="cari-kota2" data-role="listview" data-inset="true" data-filter="true" data-filter-reveal="true" data-filter-placeholder="Pilih Kota..."  data-filter-theme="a">
+                            <li><a href="#" data-val="1">Aek Kanopan</a></li>
+                            <li><a href="#" data-val="2">Arga Makmur</a></li>
+                            <li><a href="#" data-val="3">Arosuka</a></li>
+                            <li><a href="#" data-val="4">Balige</a></li>
+                            <li><a href="#" data-val="5">Banda Aceh</a></li>
+                            <li><a href="#" data-val="6">Bandar Lampung</a></li>
+                            <li><a href="#" data-val="7">Bagansiapiapi</a></li>
+                            <li><a href="#" data-val="8">Baganbatu</a></li>
+                            <li><a href="#" data-val="9">Bandar Seri Bentan</a></li>
+                            <li><a href="#" data-val="10">Bangkinang</a></li>
+                            <li><a href="#" data-val="11">Bangko</a></li>
+                            <li><a href="#" data-val="12">Banyuasin</a></li>
+                            <li><a href="#" data-val="13">Batam</a></li>
+                            <li><a href="#" data-val="14">Baturaja</a></li>
+                            <li><a href="#" data-val="15">Batusangkar</a></li>
+                            <li><a href="#" data-val="16">Bengkalis</a></li>
+                            <li><a href="#" data-val="17">Bengkulu</a></li>
+                            <li><a href="#" data-val="18">Binjai</a></li>
+                            <li><a href="#" data-val="19">Bintuhan</a></li>
+                            <li><a href="#" data-val="20">Bireuen</a></li>
+                            <li><a href="#" data-val="21">Blambangan Umpu</a></li>
+                            <li><a href="#" data-val="22">Blangpidie</a></li>
+                            <li><a href="#" data-val="23">Blang Kejeren</a></li>
+                            <li><a href="#" data-val="24">Bukittinggi</a></li>
+                            <li><a href="#" data-val="25">Calang</a></li>
+                            <li><a href="#" data-val="26">Curup</a></li>
+                            <li><a href="#" data-val="27">Daik</a></li>
+                            <li><a href="#" data-val="28">Dolok Marawa</a></li>
+                            <li><a href="#" data-val="29">Dumai</a></li>
+                            <li><a href="#" data-val="30">Gedong Tataan</a></li>
+                            <li><a href="#" data-val="31">Gunung Sitoli</a></li>
+                            <li><a href="#" data-val="32">Gunun Sugih</a></li>
+                            <li><a href="#" data-val="33">Gunung Tua</a></li>
+                            <li><a href="#" data-val="34">Idi Rayeuk</a></li>
+                            <li><a href="#" data-val="35">Indralaya</a></li>
+                            <li><a href="#" data-val="36">Jambi</a></li>
+                            <li><a href="#" data-val="37">Jantho</a></li>
+                            <li><a href="#" data-val="38">Kabanjahe</a></li>
+                            <li><a href="#" data-val="39">Kalianda</a></li>
+                            <li><a href="#" data-val="40">Karang Baru</a></li>
+                            <li><a href="#" data-val="41">Karang Tinggi</a></li>
+                            <li><a href="#" data-val="42">Kayu Agung</a></li>
+                            <li><a href="#" data-val="43">Kepahiang</a></li>
+                            <li><a href="#" data-val="44">Kisaran</a></li>
+                            <li><a href="#" data-val="45">Koba</a></li>
+                            <li><a href="#" data-val="46">Kota Agung</a></li>
+                            <li><a href="#" data-val="47">Kota Bumi</a></li>
+                            <li><a href="#" data-val="48">Kota Pinang</a></li>
+                            <li><a href="#" data-val="49">Kuala Tungkal</a></li>
+                            <li><a href="#" data-val="50">Kutacane</a></li>
+                            <li><a href="#" data-val="51">Lahat</a></li>
+                            <li><a href="#" data-val="52">Lahomi</a></li>
+                            <li><a href="#" data-val="53">Langsa</a></li>
+                            <li><a href="#" data-val="54">Lhokseumawe</a></li>
+                            <li><a href="#" data-val="55">Lhoksukon</a></li>
+                            <li><a href="#" data-val="56">Limapuluh</a></li>
+                            <li><a href="#" data-val="57">Liwa</a></li>
+                            <li><a href="#" data-val="58">Lotu</a></li>
+                            <li><a href="#" data-val="59">Lubuk Basung</a></li>
+                            <li><a href="#" data-val="60">Lubuk Bendaharo</a></li>
+                            <li><a href="#" data-val="61">Lubuk Linggau</a></li>
+                            <li><a href="#" data-val="62">Lubuk Pakam</a></li>
+                            <li><a href="#" data-val="63">Lubuk Sikaping</a></li>
+                            <li><a href="#" data-val="64">Manggar</a></li>
+                            <li><a href="#" data-val="65">Manna</a></li>
+                            <li><a href="#" data-val="66">Martapura</a></li>
+                            <li><a href="#" data-val="67">Medan</a></li>
+                            <li><a href="#" data-val="68">Menggala</a></li>
+                            <li><a href="#" data-val="69">Mentok</a></li>
+                            <li><a href="#" data-val="70">Metro</a></li>
+                            <li><a href="#" data-val="71">Meulaboh</a></li>
+                            <li><a href="#" data-val="72">Meureude</a></li>
+                            <li><a href="#" data-val="73">Muara Aman</a></li>
+                            <li><a href="#" data-val="74">Muara Bulian</a></li>
+                            <li><a href="#" data-val="75">Muara Bungo</a></li>
+                            <li><a href="#" data-val="76">Muara Dua</a></li>
+                            <li><a href="#" data-val="77">Muara Enim</a></li>
+                            <li><a href="#" data-val="78">Muara Sabak</a></li>
+                            <li><a href="#" data-val="79">Muara Tebo</a></li>
+                            <li><a href="#" data-val="80">Muaro Sijunjung</a></li>
+                            <li><a href="#" data-val="81">Muko Muko</a></li>
+                            <li><a href="#" data-val="82">Padang</a></li>
+                            <li><a href="#" data-val="83">Padang Aro</a></li>
+                            <li><a href="#" data-val="84">Padang Panjang</a></li>
+                            <li><a href="#" data-val="85">Padang Sidempuan</a></li>
+                            <li><a href="#" data-val="86">Pagaralam</a></li>
+                            <li><a href="#" data-val="87">Painan</a></li>
+                            <li><a href="#" data-val="88">Palembang</a></li>
+                            <li><a href="#" data-val="89">Pandan</a></li>
+                            <li><a href="#" data-val="90">Pangkalan Kerinci</a></li>
+                            <li><a href="#" data-val="91">Pangkal Pinang</a></li>
+                            <li><a href="#" data-val="92">Panguruan</a></li>
+                            <li><a href="#" data-val="93">Panyabungan</a></li>
+                            <li><a href="#" data-val="94">Pariaman</a></li>
+                            <li><a href="#" data-val="95">Parit Malintang</a></li>
+                            <li><a href="#" data-val="96">Pasir Pengarayan</a></li>
+                            <li><a href="#" data-val="97">Payakumbuh</a></li>
+                            <li><a href="#" data-val="98">Pekanbaru</a></li>
+                            <li><a href="#" data-val="99">Pematang Siantar</a></li>
+                            <li><a href="#" data-val="100">Prabumulih</a></li>
+                            <li><a href="#" data-val="101">Pringsewu</a></li>
+                            <li><a href="#" data-val="102">Pulau Punjung</a></li>
+                            <li><a href="#" data-val="103">Ranai</a></li>
+                            <li><a href="#" data-val="104">Rantau Prapat</a></li>
+                            <li><a href="#" data-val="105">Raya</a></li>
+                            <li><a href="#" data-val="106">Rengat</a></li>
+                            <li><a href="#" data-val="107">Sabang</a></li>
+                            <li><a href="#" data-val="108">Salak</a></li>
+                            <li><a href="#" data-val="109">Sarilamak</a></li>
+                            <li><a href="#" data-val="110">Sarolangun</a></li>
+                            <li><a href="#" data-val="111">Sawahlunto</a></li>
+                            <li><a href="#" data-val="112">Sei Rampah</a></li>
+                            <li><a href="#" data-val="113">Sekayu</a></li>
+                            <li><a href="#" data-val="114">Selat Panjang</a></li>
+                            <li><a href="#" data-val="115">Sengeti</a></li>
+                            <li><a href="#" data-val="116">Siak Sri Indrapura</a></li>
+                            <li><a href="#" data-val="117">Sibolga</a></li>
+                            <li><a href="#" data-val="118">Sibuhuan</a></li>
+                            <li><a href="#" data-val="119">Sidikalang</a></li>
+                            <li><a href="#" data-val="120">Sigli</a></li>
+                            <li><a href="#" data-val="121">Simpang Empat</a></li>
+                            <li><a href="#" data-val="122">Simpang Tiga Redelong</a></li>
+                            <li><a href="#" data-val="123">Sinabang</a></li>
+                            <li><a href="#" data-val="124">Singkil</a></li>
+                            <li><a href="#" data-val="125">Sipirok</a></li>
+                            <li><a href="#" data-val="126">Solok</a></li>
+                            <li><a href="#" data-val="127">Stabat</a></li>
+                            <li><a href="#" data-val="128">Subulussalam</a></li>
+                            <li><a href="#" data-val="129">Sukadana</a></li>
+                            <li><a href="#" data-val="130">Suka Makmue</a></li>
+                            <li><a href="#" data-val="131">Sungailiat</a></li>
+                            <li><a href="#" data-val="132">Sungai Penuh</a></li>
+                            <li><a href="#" data-val="133">Takengon</a></li>
+                            <li><a href="#" data-val="134">Tais</a></li>
+                            <li><a href="#" data-val="135">Tanjung Balai</a></li>
+                            <li><a href="#" data-val="136">Tanjung Balai Karimun</a></li>
+                            <li><a href="#" data-val="137">Tanjung Enim</a></li>
+                            <li><a href="#" data-val="138">Tanjung Pandan</a></li>
+                            <li><a href="#" data-val="139">Tanjung Pinang</a></li>
+                            <li><a href="#" data-val="140">Tapaktuan</a></li>
+                            <li><a href="#" data-val="141">Tarempa</a></li>
+                            <li><a href="#" data-val="142">Tarutung</a></li>
+                            <li><a href="#" data-val="143">Tebing Tinggi</a></li>
+                            <li><a href="#" data-val="144">Tebing Tinggi</a></li>
+                            <li><a href="#" data-val="145">Teluk Dalam</a></li>
+                            <li><a href="#" data-val="146">Teluk Kuantan</a></li>
+                            <li><a href="#" data-val="147">Tembilahan</a></li>
+                            <li><a href="#" data-val="148">Toboali</a></li>
+                            <li><a href="#" data-val="149">Tuapejat</a></li>
+                            <li><a href="#" data-val="150">Ujung Tanjung</a></li>
+                            <li><a href="#" data-val="151">Bandung</a></li>
+                            <li><a href="#" data-val="152">Bangil</a></li>
+                            <li><a href="#" data-val="153">Banjar</a></li>
+                            <li><a href="#" data-val="154">Banjarnegara</a></li>
+                            <li><a href="#" data-val="155">Bangkalan</a></li>
+                            <li><a href="#" data-val="156">Bantul</a></li>
+                            <li><a href="#" data-val="157">Banyumas</a></li>
+                            <li><a href="#" data-val="158">Banyuwangi</a></li>
+                            <li><a href="#" data-val="159">Batang</a></li>
+                            <li><a href="#" data-val="160">Batu</a></li>
+                            <li><a href="#" data-val="161">Bekasi</a></li>
+                            <li><a href="#" data-val="162">Blitar</a></li>
+                            <li><a href="#" data-val="163">Blora</a></li>
+                            <li><a href="#" data-val="164">Bogor</a></li>
+                            <li><a href="#" data-val="165">Bojonegoro</a></li>
+                            <li><a href="#" data-val="166">Bondowoso</a></li>
+                            <li><a href="#" data-val="167">Boyolali</a></li>
+                            <li><a href="#" data-val="168">Bumiayu</a></li>
+                            <li><a href="#" data-val="169">Brebes</a></li>
+                            <li><a href="#" data-val="170">Cianjur</a></li>
+                            <li><a href="#" data-val="171">Ciamis</a></li>
+                            <li><a href="#" data-val="172">Cibinong</a></li>
+                            <li><a href="#" data-val="173">Cikampek</a></li>
+                            <li><a href="#" data-val="174">Cikarang</a></li>
+                            <li><a href="#" data-val="175">Cilacap</a></li>
+                            <li><a href="#" data-val="176">Cilegon</a></li>
+                            <li><a href="#" data-val="177">Cirebon</a></li>
+                            <li><a href="#" data-val="178">Demak</a></li>
+                            <li><a href="#" data-val="179">Depok</a></li>
+                            <li><a href="#" data-val="180">Garut</a></li>
+                            <li><a href="#" data-val="181">Gresik</a></li>
+                            <li><a href="#" data-val="182">Indramayu</a></li>
+                            <li><a href="#" data-val="183">Jakarta</a></li>
+                            <li><a href="#" data-val="184">Jember</a></li>
+                            <li><a href="#" data-val="185">Jepara</a></li>
+                            <li><a href="#" data-val="186">Jombang</a></li>
+                            <li><a href="#" data-val="187">Kajen</a></li>
+                            <li><a href="#" data-val="188">Karanganyar</a></li>
+                            <li><a href="#" data-val="189">Kebumen</a></li>
+                            <li><a href="#" data-val="190">Kediri</a></li>
+                            <li><a href="#" data-val="191">Kendal</a></li>
+                            <li><a href="#" data-val="192">Kepanjen</a></li>
+                            <li><a href="#" data-val="193">Klaten</a></li>
+                            <li><a href="#" data-val="194">Kraksaan</a></li>
+                            <li><a href="#" data-val="195">Kudus</a></li>
+                            <li><a href="#" data-val="196">Kuningan</a></li>
+                            <li><a href="#" data-val="197">Lamongan</a></li>
+                            <li><a href="#" data-val="198">Lumajang</a></li>
+                            <li><a href="#" data-val="199">Madiun</a></li>
+                            <li><a href="#" data-val="200">Magelang</a></li>
+                            <li><a href="#" data-val="201">Magetan</a></li>
+                            <li><a href="#" data-val="202">Majalengka</a></li>
+                            <li><a href="#" data-val="203">Malang</a></li>
+                            <li><a href="#" data-val="204">Mojokerto</a></li>
+                            <li><a href="#" data-val="205">Mungkid</a></li>
+                            <li><a href="#" data-val="206">Ngamprah</a></li>
+                            <li><a href="#" data-val="207">Nganjuk</a></li>
+                            <li><a href="#" data-val="208">Ngawi</a></li>
+                            <li><a href="#" data-val="209">Pacitan</a></li>
+                            <li><a href="#" data-val="210">Pamekasan</a></li>
+                            <li><a href="#" data-val="211">Pandeglang</a></li>
+                            <li><a href="#" data-val="212">Pare</a></li>
+                            <li><a href="#" data-val="213">Pati</a></li>
+                            <li><a href="#" data-val="214">Pasuruan</a></li>
+                            <li><a href="#" data-val="215">Pekalongan</a></li>
+                            <li><a href="#" data-val="216">Pelabuhan Ratu</a></li>
+                            <li><a href="#" data-val="217">Pemalang</a></li>
+                            <li><a href="#" data-val="218">Ponorogo</a></li>
+                            <li><a href="#" data-val="219">Probolinggo</a></li>
+                            <li><a href="#" data-val="220">Purbalingga</a></li>
+                            <li><a href="#" data-val="221">Purwakarta</a></li>
+                            <li><a href="#" data-val="222">Purwodadi</a></li>
+                            <li><a href="#" data-val="223">Purwokerto</a></li>
+                            <li><a href="#" data-val="224">Purworejo</a></li>
+                            <li><a href="#" data-val="225">Rangkasbitung</a></li>
+                            <li><a href="#" data-val="226">Rembang</a></li>
+                            <li><a href="#" data-val="227">Salatiga</a></li>
+                            <li><a href="#" data-val="228">Sampang</a></li>
+                            <li><a href="#" data-val="229">Semarang</a></li>
+                            <li><a href="#" data-val="230">Serang</a></li>
+                            <li><a href="#" data-val="231">Sidayu</a></li>
+                            <li><a href="#" data-val="232">Sidoarjo</a></li>
+                            <li><a href="#" data-val="233">Singaparna</a></li>
+                            <li><a href="#" data-val="234">Situbondo</a></li>
+                            <li><a href="#" data-val="235">Slawi</a></li>
+                            <li><a href="#" data-val="236">Sleman</a></li>
+                            <li><a href="#" data-val="237">Soreang</a></li>
+                            <li><a href="#" data-val="238">Sragen</a></li>
+                            <li><a href="#" data-val="239">Subang</a></li>
+                            <li><a href="#" data-val="240">Sukabumi</a></li>
+                            <li><a href="#" data-val="241">Sukoharjo</a></li>
+                            <li><a href="#" data-val="242">Sumber</a></li>
+                            <li><a href="#" data-val="243">Sumedang</a></li>
+                            <li><a href="#" data-val="244">Sumenep</a></li>
+                            <li><a href="#" data-val="245">Surabaya</a></li>
+                            <li><a href="#" data-val="246">Surakarta</a></li>
+                            <li><a href="#" data-val="247">Tasikmalaya</a></li>
+                            <li><a href="#" data-val="248">Tangerang</a></li>
+                            <li><a href="#" data-val="249">Tangerang Selatan</a></li>
+                            <li><a href="#" data-val="250">Tegal</a></li>
+                            <li><a href="#" data-val="251">Temanggung</a></li>
+                            <li><a href="#" data-val="252">Tigaraksa</a></li>
+                            <li><a href="#" data-val="253">Trenggalek</a></li>
+                            <li><a href="#" data-val="254">Tuban</a></li>
+                            <li><a href="#" data-val="255">Tulung Agung</a></li>
+                            <li><a href="#" data-val="256">Ungaran</a></li>
+                            <li><a href="#" data-val="257">Wates</a></li>
+                            <li><a href="#" data-val="258">Wlingi</a></li>
+                            <li><a href="#" data-val="259">Wonogiri</a></li>
+                            <li><a href="#" data-val="260">Wonosari</a></li>
+                            <li><a href="#" data-val="261">Wonosobo</a></li>
+                            <li><a href="#" data-val="262">Yogyakarta</a></li>
+                            <li><a href="#" data-val="263">Atambua</a></li>
+                            <li><a href="#" data-val="264">Baa</a></li>
+                            <li><a href="#" data-val="265">Badung</a></li>
+                            <li><a href="#" data-val="266">Bajawa</a></li>
+                            <li><a href="#" data-val="267">Bangli</a></li>
+                            <li><a href="#" data-val="268">Bima</a></li>
+                            <li><a href="#" data-val="269">Denpasar</a></li>
+                            <li><a href="#" data-val="270">Dompu</a></li>
+                            <li><a href="#" data-val="271">Ende</a></li>
+                            <li><a href="#" data-val="272">Gianyar</a></li>
+                            <li><a href="#" data-val="273">Kalabahi</a></li>
+                            <li><a href="#" data-val="274">Karangasem</a></li>
+                            <li><a href="#" data-val="275">Kefamenanu</a></li>
+                            <li><a href="#" data-val="276">Klungkung</a></li>
+                            <li><a href="#" data-val="277">Kupang</a></li>
+                            <li><a href="#" data-val="278">Labuhan Bajo</a></li>
+                            <li><a href="#" data-val="279">Larantuka</a></li>
+                            <li><a href="#" data-val="280">Lewoleba</a></li>
+                            <li><a href="#" data-val="281">Maumere</a></li>
+                            <li><a href="#" data-val="282">Mataram</a></li>
+                            <li><a href="#" data-val="283">Mbay</a></li>
+                            <li><a href="#" data-val="284">Negara</a></li>
+                            <li><a href="#" data-val="285">Praya</a></li>
+                            <li><a href="#" data-val="286">Raba</a></li>
+                            <li><a href="#" data-val="287">Ruteng</a></li>
+                            <li><a href="#" data-val="288">Selong</a></li>
+                            <li><a href="#" data-val="289">Singaraja</a></li>
+                            <li><a href="#" data-val="290">Soe</a></li>
+                            <li><a href="#" data-val="291">Sumbawa Besar</a></li>
+                            <li><a href="#" data-val="292">Tabanan</a></li>
+                            <li><a href="#" data-val="293">Taliwang</a></li>
+                            <li><a href="#" data-val="294">Tambolaka</a></li>
+                            <li><a href="#" data-val="295">Tanjung</a></li>
+                            <li><a href="#" data-val="296">Waibakul</a></li>
+                            <li><a href="#" data-val="297">Waikabubak</a></li>
+                            <li><a href="#" data-val="298">Waingapu</a></li>
+                            <li><a href="#" data-val="299">Pontianak</a></li>
+                            <li><a href="#" data-val="300">Samarinda</a></li>
+                            <li><a href="#" data-val="301">Banjarmasin</a></li>
+                            <li><a href="#" data-val="302">Balikpapan</a></li>
+                            <li><a href="#" data-val="303">Singkawang</a></li>
+                            <li><a href="#" data-val="304">Palangkaraya</a></li>
+                            <li><a href="#" data-val="305">Mempawah</a></li>
+                            <li><a href="#" data-val="306">Ketapang</a></li>
+                            <li><a href="#" data-val="307">Sintang</a></li>
+                            <li><a href="#" data-val="308">Tarakan</a></li>
+                            <li><a href="#" data-val="309">Putussibau</a></li>
+                            <li><a href="#" data-val="310">Sambas</a></li>
+                            <li><a href="#" data-val="311">Sampit</a></li>
+                            <li><a href="#" data-val="312">Banjarbaru</a></li>
+                            <li><a href="#" data-val="313">Barabai</a></li>
+                            <li><a href="#" data-val="314">Batang Tarang</a></li>
+                            <li><a href="#" data-val="315">Batulicin</a></li>
+                            <li><a href="#" data-val="316">Bengkayang</a></li>
+                            <li><a href="#" data-val="317">Bontang</a></li>
+                            <li><a href="#" data-val="318">Buntok</a></li>
+                            <li><a href="#" data-val="319">Kandangan</a></li>
+                            <li><a href="#" data-val="320">Kotabaru</a></li>
+                            <li><a href="#" data-val="321">Kuala Kapuas</a></li>
+                            <li><a href="#" data-val="322">Kuala Kurun</a></li>
+                            <li><a href="#" data-val="323">Kuala Pembuang</a></li>
+                            <li><a href="#" data-val="324">Malinau</a></li>
+                            <li><a href="#" data-val="325">Marabahan</a></li>
+                            <li><a href="#" data-val="326">Martapura</a></li>
+                            <li><a href="#" data-val="327">Muara Teweh</a></li>
+                            <li><a href="#" data-val="328">Nanga Bulik</a></li>
+                            <li><a href="#" data-val="329">Nanga Pinoh</a></li>
+                            <li><a href="#" data-val="330">Ngabang</a></li>
+                            <li><a href="#" data-val="331">Nunukan</a></li>
+                            <li><a href="#" data-val="332">Pangkalan Bun</a></li>
+                            <li><a href="#" data-val="333">Paringin</a></li>
+                            <li><a href="#" data-val="334">Pelaihari</a></li>
+                            <li><a href="#" data-val="335">Penajam</a></li>
+                            <li><a href="#" data-val="336">Pulang Pisau</a></li>
+                            <li><a href="#" data-val="337">Purukcahu</a></li>
+                            <li><a href="#" data-val="338">Rantau</a></li>
+                            <li><a href="#" data-val="339">Sangatta</a></li>
+                            <li><a href="#" data-val="340">Sekadau</a></li>
+                            <li><a href="#" data-val="341">Sendawar</a></li>
+                            <li><a href="#" data-val="342">Sukadana</a></li>
+                            <li><a href="#" data-val="343">Sukamara</a></li>
+                            <li><a href="#" data-val="344">Sungai Raya</a></li>
+                            <li><a href="#" data-val="345">Tamiang Layang</a></li>
+                            <li><a href="#" data-val="346">Tanah Grogot</a></li>
+                            <li><a href="#" data-val="347">Tanjung</a></li>
+                            <li><a href="#" data-val="348">Tanjung Selor</a></li>
+                            <li><a href="#" data-val="349">Tanjung Redeb</a></li>
+                            <li><a href="#" data-val="350">Tenggarong</a></li>
+                            <li><a href="#" data-val="351">Tideng Pale</a></li>
+                            <li><a href="#" data-val="352">Airmadidi</a></li>
+                            <li><a href="#" data-val="353">Ampana</a></li>
+                            <li><a href="#" data-val="354">Amurang</a></li>
+                            <li><a href="#" data-val="355">Andolo</a></li>
+                            <li><a href="#" data-val="356">Banggai</a></li>
+                            <li><a href="#" data-val="357">Bantaeng</a></li>
+                            <li><a href="#" data-val="358">Barru</a></li>
+                            <li><a href="#" data-val="359">Bau-Bau</a></li>
+                            <li><a href="#" data-val="360">Benteng</a></li>
+                            <li><a href="#" data-val="361">Bitung</a></li>
+                            <li><a href="#" data-val="362">Bolaang Uki</a></li>
+                            <li><a href="#" data-val="363">Boroko</a></li>
+                            <li><a href="#" data-val="364">Bulukumba</a></li>
+                            <li><a href="#" data-val="365">Bungku</a></li>
+                            <li><a href="#" data-val="366">Buol</a></li>
+                            <li><a href="#" data-val="367">Buranga</a></li>
+                            <li><a href="#" data-val="368">Donggala</a></li>
+                            <li><a href="#" data-val="369">Enrekang</a></li>
+                            <li><a href="#" data-val="370">Gorontalo</a></li>
+                            <li><a href="#" data-val="371">Jeneponto</a></li>
+                            <li><a href="#" data-val="372">Kawangkoan</a></li>
+                            <li><a href="#" data-val="373">Kendari</a></li>
+                            <li><a href="#" data-val="374">Kolaka</a></li>
+                            <li><a href="#" data-val="375">Kotamobagu</a></li>
+                            <li><a href="#" data-val="376">Kwandang</a></li>
+                            <li><a href="#" data-val="377">Lasusua</a></li>
+                            <li><a href="#" data-val="378">Luwuk</a></li>
+                            <li><a href="#" data-val="379">Majene</a></li>
+                            <li><a href="#" data-val="380">Makale</a></li>
+                            <li><a href="#" data-val="381">Makassar</a></li>
+                            <li><a href="#" data-val="382">Malili</a></li>
+                            <li><a href="#" data-val="383">Mamasa</a></li>
+                            <li><a href="#" data-val="384">Mamuju</a></li>
+                            <li><a href="#" data-val="385">Manado</a></li>
+                            <li><a href="#" data-val="386">Marisa</a></li>
+                            <li><a href="#" data-val="387">Maros</a></li>
+                            <li><a href="#" data-val="388">Masamba</a></li>
+                            <li><a href="#" data-val="389">Melonguane</a></li>
+                            <li><a href="#" data-val="390">Ondong Siau</a></li>
+                            <li><a href="#" data-val="391">Palopo</a></li>
+                            <li><a href="#" data-val="392">Palu</a></li>
+                            <li><a href="#" data-val="393">Pangkajene</a></li>
+                            <li><a href="#" data-val="394">Pare-Pare</a></li>
+                            <li><a href="#" data-val="395">Parigi</a></li>
+                            <li><a href="#" data-val="396">Pasangkayu</a></li>
+                            <li><a href="#" data-val="397">Pinrang</a></li>
+                            <li><a href="#" data-val="398">Polewali</a></li>
+                            <li><a href="#" data-val="399">Poso</a></li>
+                            <li><a href="#" data-val="400">Raha</a></li>
+                            <li><a href="#" data-val="401">Rantepao</a></li>
+                            <li><a href="#" data-val="402">Ratahan</a></li>
+                            <li><a href="#" data-val="403">Rumbia</a></li>
+                            <li><a href="#" data-val="404">Sengkang</a></li>
+                            <li><a href="#" data-val="405">Sidenreng</a></li>
+                            <li><a href="#" data-val="406">Sigi Biromaru</a></li>
+                            <li><a href="#" data-val="407">Sinjai</a></li>
+                            <li><a href="#" data-val="408">Sunggu Minasa</a></li>
+                            <li><a href="#" data-val="409">Suwawa</a></li>
+                            <li><a href="#" data-val="410">Tahuna</a></li>
+                            <li><a href="#" data-val="411">Takalar</a></li>
+                            <li><a href="#" data-val="412">Tilamuta</a></li>
+                            <li><a href="#" data-val="413">Toli Toli</a></li>
+                            <li><a href="#" data-val="414">Tomohon</a></li>
+                            <li><a href="#" data-val="415">Tondano</a></li>
+                            <li><a href="#" data-val="416">Tutuyan</a></li>
+                            <li><a href="#" data-val="417">Unaaha</a></li>
+                            <li><a href="#" data-val="418">Wangi Wangi</a></li>
+                            <li><a href="#" data-val="419">Wanggudu</a></li>
+                            <li><a href="#" data-val="420">Watampone</a></li>
+                            <li><a href="#" data-val="421">Watan Soppeng</a></li>
+                            <li><a href="#" data-val="422">Cliquers</a></li>
+                            <li><a href="#" data-val="423">Libuo Palma</a></li>
+                            <li><a href="#" data-val="424">Agats</a></li>
+                            <li><a href="#" data-val="425">Ambon</a></li>
+                            <li><a href="#" data-val="426">Banda</a></li>
+                            <li><a href="#" data-val="427">Biak</a></li>
+                            <li><a href="#" data-val="428">Bintuni</a></li>
+                            <li><a href="#" data-val="429">Botawa</a></li>
+                            <li><a href="#" data-val="430">Burmeso</a></li>
+                            <li><a href="#" data-val="431">Dataran Hunimoa</a></li>
+                            <li><a href="#" data-val="432">Dataran Hunipopu</a></li>
+                            <li><a href="#" data-val="433">Dobo</a></li>
+                            <li><a href="#" data-val="434">Elelim</a></li>
+                            <li><a href="#" data-val="435">Enarotali</a></li>
+                            <li><a href="#" data-val="436">Fak Fak</a></li>
+                            <li><a href="#" data-val="437">Fef</a></li>
+                            <li><a href="#" data-val="438">Ilaga</a></li>
+                            <li><a href="#" data-val="439">Jailolo</a></li>
+                            <li><a href="#" data-val="440">Jayapura</a></li>
+                            <li><a href="#" data-val="441">Kaimana</a></li>
+                            <li><a href="#" data-val="442">Karubaga</a></li>
+                            <li><a href="#" data-val="443">Kenyam</a></li>
+                            <li><a href="#" data-val="444">Kepi</a></li>
+                            <li><a href="#" data-val="445">Kigamani</a></li>
+                            <li><a href="#" data-val="446">Kisar</a></li>
+                            <li><a href="#" data-val="447">Kobakma</a></li>
+                            <li><a href="#" data-val="448">Kota Mulia</a></li>
+                            <li><a href="#" data-val="449">Kumurkek</a></li>
+                            <li><a href="#" data-val="450">Labuha</a></li>
+                            <li><a href="#" data-val="451">Larat</a></li>
+                            <li><a href="#" data-val="452">Leksula</a></li>
+                            <li><a href="#" data-val="453">Maba</a></li>
+                            <li><a href="#" data-val="454">Manokwari</a></li>
+                            <li><a href="#" data-val="455">Masohi</a></li>
+                            <li><a href="#" data-val="456">Merauke</a></li>
+                            <li><a href="#" data-val="457">Morotai Selatan</a></li>
+                            <li><a href="#" data-val="458">Nabire</a></li>
+                            <li><a href="#" data-val="459">Namlea</a></li>
+                            <li><a href="#" data-val="460">Namrole</a></li>
+                            <li><a href="#" data-val="461">Oksibil</a></li>
+                            <li><a href="#" data-val="462">Oobo</a></li>
+                            <li><a href="#" data-val="463">Passo</a></li>
+                            <li><a href="#" data-val="464">Piru</a></li>
+                            <li><a href="#" data-val="465">Rasiei</a></li>
+                            <li><a href="#" data-val="466">Sanana</a></li>
+                            <li><a href="#" data-val="467">Saparua</a></li>
+                            <li><a href="#" data-val="468">Sarmi</a></li>
+                            <li><a href="#" data-val="469">Saumlaki</a></li>
+                            <li><a href="#" data-val="470">Sentani</a></li>
+                            <li><a href="#" data-val="471">Serui</a></li>
+                            <li><a href="#" data-val="472">Sorendiweri</a></li>
+                            <li><a href="#" data-val="473">Sorong</a></li>
+                            <li><a href="#" data-val="474">Sugapa</a></li>
+                            <li><a href="#" data-val="475">Sumohai</a></li>
+                            <li><a href="#" data-val="476">Tanah Merah</a></li>
+                            <li><a href="#" data-val="477">Teminabuan</a></li>
+                            <li><a href="#" data-val="478">Ternate</a></li>
+                            <li><a href="#" data-val="479">Tiakur</a></li>
+                            <li><a href="#" data-val="480">Tidore</a></li>
+                            <li><a href="#" data-val="481">Tigi</a></li>
+                            <li><a href="#" data-val="482">Timika</a></li>
+                            <li><a href="#" data-val="483">Tiom</a></li>
+                            <li><a href="#" data-val="484">Tobelo</a></li>
+                            <li><a href="#" data-val="485">Tual</a></li>
+                            <li><a href="#" data-val="486">Waisai</a></li>
+                            <li><a href="#" data-val="487">Wamena</a></li>
+                            <li><a href="#" data-val="488">Waris</a></li>
+                            <li><a href="#" data-val="489">Weda</a></li>
+
+                        </ul>
+                        <label for="text-18">Kota:</label>
+                        <input type="hidden" value="0" id="val-kota2" name="kota">
+                        <input type="hidden" value="0" id="val-id" name="id">
+                        <input type="text" name="text-18" id="text-kota2" value="cari kota" disabled="disabled">
+
+
+                        <input type="submit" data-theme="a" value="Submit">
+                    </form>
+                </div>
+            </div>
+        </div>
+
+
+        <div data-role="page" id="daftar">
+            <div data-role="header">
+                <a data-role="button" href="#page-home" data-icon="gear" data-iconpos="notext"
+                   class="ui-btn-left" data-transition="flip">&nbsp;
+                </a>
+                <h3 id="judul-login">
+                    Daftar Pendonor
+                </h3>
+            </div>
+            <div data-role="content" id="content-daftar">
+                <div style="position: relative; background-color: #fff; border: 1px solid #b8b8b8;text-align: center">
+                    <img src="assets/images/blood.jpg" alt="image" style="top: 50%; left: 50%;">
+                </div>
+
+                <div id="data-register">
+                    <form action="" method="POST" data-ajax="false" data-theme="a" id="form-regis">
+                        <div data-role="fieldcontain">
+                            <h2 id="judul-edit-h2">
+                                Register
+                            </h2>
+                        </div>
+                        <div data-role="fieldcontain">
+                            <label for="textinput1">
+                                Nama
+                            </label>
+                            <input name="nama" placeholder="" value="" type="text">
+                        </div>
+                        <div data-role="fieldcontain">
+                            <label for="textinput1">
+                                Sandi
+                            </label>
+                            <input name="sandi" placeholder="" value="" type="password">
+                        </div>
+                        <div data-role="fieldcontain">
+                            <label for="textinput2">
+                                Telpon
+                            </label>
+                            <input name="telpon"  placeholder="" value="" type="number">
+                        </div>
+                        <div data-role="fieldcontain">
+                            <label for="selectmenu1">
+                                Golongan Darah:
+                            </label>
+                            <select id="selectmenu1" name="darah" class="select-darah">
+                                <option value="ap">
+                                    A+
+                                </option>
+                                <option value="an">
+                                    A-
+                                </option>
+                                <option value="bp">
+                                    B+
+                                </option>
+                                <option value="bn">
+                                    B-
+                                </option>
+                                <option value="abp">
+                                    AB+
+                                </option>
+                                <option value="abn">
+                                    AB-
+                                </option>
+                                <option value="op">
+                                    O+
+                                </option>
+                                <option value="on">
+                                    O-
+                                </option>
+                            </select>
+                        </div>
+                        <ul id="cari-kota3" data-role="listview" data-inset="true" data-filter="true" data-filter-reveal="true" data-filter-placeholder="Pilih Kota..."  data-filter-theme="a">
+                            <li><a href="#" data-val="1">Aek Kanopan</a></li>
+                            <li><a href="#" data-val="2">Arga Makmur</a></li>
+                            <li><a href="#" data-val="3">Arosuka</a></li>
+                            <li><a href="#" data-val="4">Balige</a></li>
+                            <li><a href="#" data-val="5">Banda Aceh</a></li>
+                            <li><a href="#" data-val="6">Bandar Lampung</a></li>
+                            <li><a href="#" data-val="7">Bagansiapiapi</a></li>
+                            <li><a href="#" data-val="8">Baganbatu</a></li>
+                            <li><a href="#" data-val="9">Bandar Seri Bentan</a></li>
+                            <li><a href="#" data-val="10">Bangkinang</a></li>
+                            <li><a href="#" data-val="11">Bangko</a></li>
+                            <li><a href="#" data-val="12">Banyuasin</a></li>
+                            <li><a href="#" data-val="13">Batam</a></li>
+                            <li><a href="#" data-val="14">Baturaja</a></li>
+                            <li><a href="#" data-val="15">Batusangkar</a></li>
+                            <li><a href="#" data-val="16">Bengkalis</a></li>
+                            <li><a href="#" data-val="17">Bengkulu</a></li>
+                            <li><a href="#" data-val="18">Binjai</a></li>
+                            <li><a href="#" data-val="19">Bintuhan</a></li>
+                            <li><a href="#" data-val="20">Bireuen</a></li>
+                            <li><a href="#" data-val="21">Blambangan Umpu</a></li>
+                            <li><a href="#" data-val="22">Blangpidie</a></li>
+                            <li><a href="#" data-val="23">Blang Kejeren</a></li>
+                            <li><a href="#" data-val="24">Bukittinggi</a></li>
+                            <li><a href="#" data-val="25">Calang</a></li>
+                            <li><a href="#" data-val="26">Curup</a></li>
+                            <li><a href="#" data-val="27">Daik</a></li>
+                            <li><a href="#" data-val="28">Dolok Marawa</a></li>
+                            <li><a href="#" data-val="29">Dumai</a></li>
+                            <li><a href="#" data-val="30">Gedong Tataan</a></li>
+                            <li><a href="#" data-val="31">Gunung Sitoli</a></li>
+                            <li><a href="#" data-val="32">Gunun Sugih</a></li>
+                            <li><a href="#" data-val="33">Gunung Tua</a></li>
+                            <li><a href="#" data-val="34">Idi Rayeuk</a></li>
+                            <li><a href="#" data-val="35">Indralaya</a></li>
+                            <li><a href="#" data-val="36">Jambi</a></li>
+                            <li><a href="#" data-val="37">Jantho</a></li>
+                            <li><a href="#" data-val="38">Kabanjahe</a></li>
+                            <li><a href="#" data-val="39">Kalianda</a></li>
+                            <li><a href="#" data-val="40">Karang Baru</a></li>
+                            <li><a href="#" data-val="41">Karang Tinggi</a></li>
+                            <li><a href="#" data-val="42">Kayu Agung</a></li>
+                            <li><a href="#" data-val="43">Kepahiang</a></li>
+                            <li><a href="#" data-val="44">Kisaran</a></li>
+                            <li><a href="#" data-val="45">Koba</a></li>
+                            <li><a href="#" data-val="46">Kota Agung</a></li>
+                            <li><a href="#" data-val="47">Kota Bumi</a></li>
+                            <li><a href="#" data-val="48">Kota Pinang</a></li>
+                            <li><a href="#" data-val="49">Kuala Tungkal</a></li>
+                            <li><a href="#" data-val="50">Kutacane</a></li>
+                            <li><a href="#" data-val="51">Lahat</a></li>
+                            <li><a href="#" data-val="52">Lahomi</a></li>
+                            <li><a href="#" data-val="53">Langsa</a></li>
+                            <li><a href="#" data-val="54">Lhokseumawe</a></li>
+                            <li><a href="#" data-val="55">Lhoksukon</a></li>
+                            <li><a href="#" data-val="56">Limapuluh</a></li>
+                            <li><a href="#" data-val="57">Liwa</a></li>
+                            <li><a href="#" data-val="58">Lotu</a></li>
+                            <li><a href="#" data-val="59">Lubuk Basung</a></li>
+                            <li><a href="#" data-val="60">Lubuk Bendaharo</a></li>
+                            <li><a href="#" data-val="61">Lubuk Linggau</a></li>
+                            <li><a href="#" data-val="62">Lubuk Pakam</a></li>
+                            <li><a href="#" data-val="63">Lubuk Sikaping</a></li>
+                            <li><a href="#" data-val="64">Manggar</a></li>
+                            <li><a href="#" data-val="65">Manna</a></li>
+                            <li><a href="#" data-val="66">Martapura</a></li>
+                            <li><a href="#" data-val="67">Medan</a></li>
+                            <li><a href="#" data-val="68">Menggala</a></li>
+                            <li><a href="#" data-val="69">Mentok</a></li>
+                            <li><a href="#" data-val="70">Metro</a></li>
+                            <li><a href="#" data-val="71">Meulaboh</a></li>
+                            <li><a href="#" data-val="72">Meureude</a></li>
+                            <li><a href="#" data-val="73">Muara Aman</a></li>
+                            <li><a href="#" data-val="74">Muara Bulian</a></li>
+                            <li><a href="#" data-val="75">Muara Bungo</a></li>
+                            <li><a href="#" data-val="76">Muara Dua</a></li>
+                            <li><a href="#" data-val="77">Muara Enim</a></li>
+                            <li><a href="#" data-val="78">Muara Sabak</a></li>
+                            <li><a href="#" data-val="79">Muara Tebo</a></li>
+                            <li><a href="#" data-val="80">Muaro Sijunjung</a></li>
+                            <li><a href="#" data-val="81">Muko Muko</a></li>
+                            <li><a href="#" data-val="82">Padang</a></li>
+                            <li><a href="#" data-val="83">Padang Aro</a></li>
+                            <li><a href="#" data-val="84">Padang Panjang</a></li>
+                            <li><a href="#" data-val="85">Padang Sidempuan</a></li>
+                            <li><a href="#" data-val="86">Pagaralam</a></li>
+                            <li><a href="#" data-val="87">Painan</a></li>
+                            <li><a href="#" data-val="88">Palembang</a></li>
+                            <li><a href="#" data-val="89">Pandan</a></li>
+                            <li><a href="#" data-val="90">Pangkalan Kerinci</a></li>
+                            <li><a href="#" data-val="91">Pangkal Pinang</a></li>
+                            <li><a href="#" data-val="92">Panguruan</a></li>
+                            <li><a href="#" data-val="93">Panyabungan</a></li>
+                            <li><a href="#" data-val="94">Pariaman</a></li>
+                            <li><a href="#" data-val="95">Parit Malintang</a></li>
+                            <li><a href="#" data-val="96">Pasir Pengarayan</a></li>
+                            <li><a href="#" data-val="97">Payakumbuh</a></li>
+                            <li><a href="#" data-val="98">Pekanbaru</a></li>
+                            <li><a href="#" data-val="99">Pematang Siantar</a></li>
+                            <li><a href="#" data-val="100">Prabumulih</a></li>
+                            <li><a href="#" data-val="101">Pringsewu</a></li>
+                            <li><a href="#" data-val="102">Pulau Punjung</a></li>
+                            <li><a href="#" data-val="103">Ranai</a></li>
+                            <li><a href="#" data-val="104">Rantau Prapat</a></li>
+                            <li><a href="#" data-val="105">Raya</a></li>
+                            <li><a href="#" data-val="106">Rengat</a></li>
+                            <li><a href="#" data-val="107">Sabang</a></li>
+                            <li><a href="#" data-val="108">Salak</a></li>
+                            <li><a href="#" data-val="109">Sarilamak</a></li>
+                            <li><a href="#" data-val="110">Sarolangun</a></li>
+                            <li><a href="#" data-val="111">Sawahlunto</a></li>
+                            <li><a href="#" data-val="112">Sei Rampah</a></li>
+                            <li><a href="#" data-val="113">Sekayu</a></li>
+                            <li><a href="#" data-val="114">Selat Panjang</a></li>
+                            <li><a href="#" data-val="115">Sengeti</a></li>
+                            <li><a href="#" data-val="116">Siak Sri Indrapura</a></li>
+                            <li><a href="#" data-val="117">Sibolga</a></li>
+                            <li><a href="#" data-val="118">Sibuhuan</a></li>
+                            <li><a href="#" data-val="119">Sidikalang</a></li>
+                            <li><a href="#" data-val="120">Sigli</a></li>
+                            <li><a href="#" data-val="121">Simpang Empat</a></li>
+                            <li><a href="#" data-val="122">Simpang Tiga Redelong</a></li>
+                            <li><a href="#" data-val="123">Sinabang</a></li>
+                            <li><a href="#" data-val="124">Singkil</a></li>
+                            <li><a href="#" data-val="125">Sipirok</a></li>
+                            <li><a href="#" data-val="126">Solok</a></li>
+                            <li><a href="#" data-val="127">Stabat</a></li>
+                            <li><a href="#" data-val="128">Subulussalam</a></li>
+                            <li><a href="#" data-val="129">Sukadana</a></li>
+                            <li><a href="#" data-val="130">Suka Makmue</a></li>
+                            <li><a href="#" data-val="131">Sungailiat</a></li>
+                            <li><a href="#" data-val="132">Sungai Penuh</a></li>
+                            <li><a href="#" data-val="133">Takengon</a></li>
+                            <li><a href="#" data-val="134">Tais</a></li>
+                            <li><a href="#" data-val="135">Tanjung Balai</a></li>
+                            <li><a href="#" data-val="136">Tanjung Balai Karimun</a></li>
+                            <li><a href="#" data-val="137">Tanjung Enim</a></li>
+                            <li><a href="#" data-val="138">Tanjung Pandan</a></li>
+                            <li><a href="#" data-val="139">Tanjung Pinang</a></li>
+                            <li><a href="#" data-val="140">Tapaktuan</a></li>
+                            <li><a href="#" data-val="141">Tarempa</a></li>
+                            <li><a href="#" data-val="142">Tarutung</a></li>
+                            <li><a href="#" data-val="143">Tebing Tinggi</a></li>
+                            <li><a href="#" data-val="144">Tebing Tinggi</a></li>
+                            <li><a href="#" data-val="145">Teluk Dalam</a></li>
+                            <li><a href="#" data-val="146">Teluk Kuantan</a></li>
+                            <li><a href="#" data-val="147">Tembilahan</a></li>
+                            <li><a href="#" data-val="148">Toboali</a></li>
+                            <li><a href="#" data-val="149">Tuapejat</a></li>
+                            <li><a href="#" data-val="150">Ujung Tanjung</a></li>
+                            <li><a href="#" data-val="151">Bandung</a></li>
+                            <li><a href="#" data-val="152">Bangil</a></li>
+                            <li><a href="#" data-val="153">Banjar</a></li>
+                            <li><a href="#" data-val="154">Banjarnegara</a></li>
+                            <li><a href="#" data-val="155">Bangkalan</a></li>
+                            <li><a href="#" data-val="156">Bantul</a></li>
+                            <li><a href="#" data-val="157">Banyumas</a></li>
+                            <li><a href="#" data-val="158">Banyuwangi</a></li>
+                            <li><a href="#" data-val="159">Batang</a></li>
+                            <li><a href="#" data-val="160">Batu</a></li>
+                            <li><a href="#" data-val="161">Bekasi</a></li>
+                            <li><a href="#" data-val="162">Blitar</a></li>
+                            <li><a href="#" data-val="163">Blora</a></li>
+                            <li><a href="#" data-val="164">Bogor</a></li>
+                            <li><a href="#" data-val="165">Bojonegoro</a></li>
+                            <li><a href="#" data-val="166">Bondowoso</a></li>
+                            <li><a href="#" data-val="167">Boyolali</a></li>
+                            <li><a href="#" data-val="168">Bumiayu</a></li>
+                            <li><a href="#" data-val="169">Brebes</a></li>
+                            <li><a href="#" data-val="170">Cianjur</a></li>
+                            <li><a href="#" data-val="171">Ciamis</a></li>
+                            <li><a href="#" data-val="172">Cibinong</a></li>
+                            <li><a href="#" data-val="173">Cikampek</a></li>
+                            <li><a href="#" data-val="174">Cikarang</a></li>
+                            <li><a href="#" data-val="175">Cilacap</a></li>
+                            <li><a href="#" data-val="176">Cilegon</a></li>
+                            <li><a href="#" data-val="177">Cirebon</a></li>
+                            <li><a href="#" data-val="178">Demak</a></li>
+                            <li><a href="#" data-val="179">Depok</a></li>
+                            <li><a href="#" data-val="180">Garut</a></li>
+                            <li><a href="#" data-val="181">Gresik</a></li>
+                            <li><a href="#" data-val="182">Indramayu</a></li>
+                            <li><a href="#" data-val="183">Jakarta</a></li>
+                            <li><a href="#" data-val="184">Jember</a></li>
+                            <li><a href="#" data-val="185">Jepara</a></li>
+                            <li><a href="#" data-val="186">Jombang</a></li>
+                            <li><a href="#" data-val="187">Kajen</a></li>
+                            <li><a href="#" data-val="188">Karanganyar</a></li>
+                            <li><a href="#" data-val="189">Kebumen</a></li>
+                            <li><a href="#" data-val="190">Kediri</a></li>
+                            <li><a href="#" data-val="191">Kendal</a></li>
+                            <li><a href="#" data-val="192">Kepanjen</a></li>
+                            <li><a href="#" data-val="193">Klaten</a></li>
+                            <li><a href="#" data-val="194">Kraksaan</a></li>
+                            <li><a href="#" data-val="195">Kudus</a></li>
+                            <li><a href="#" data-val="196">Kuningan</a></li>
+                            <li><a href="#" data-val="197">Lamongan</a></li>
+                            <li><a href="#" data-val="198">Lumajang</a></li>
+                            <li><a href="#" data-val="199">Madiun</a></li>
+                            <li><a href="#" data-val="200">Magelang</a></li>
+                            <li><a href="#" data-val="201">Magetan</a></li>
+                            <li><a href="#" data-val="202">Majalengka</a></li>
+                            <li><a href="#" data-val="203">Malang</a></li>
+                            <li><a href="#" data-val="204">Mojokerto</a></li>
+                            <li><a href="#" data-val="205">Mungkid</a></li>
+                            <li><a href="#" data-val="206">Ngamprah</a></li>
+                            <li><a href="#" data-val="207">Nganjuk</a></li>
+                            <li><a href="#" data-val="208">Ngawi</a></li>
+                            <li><a href="#" data-val="209">Pacitan</a></li>
+                            <li><a href="#" data-val="210">Pamekasan</a></li>
+                            <li><a href="#" data-val="211">Pandeglang</a></li>
+                            <li><a href="#" data-val="212">Pare</a></li>
+                            <li><a href="#" data-val="213">Pati</a></li>
+                            <li><a href="#" data-val="214">Pasuruan</a></li>
+                            <li><a href="#" data-val="215">Pekalongan</a></li>
+                            <li><a href="#" data-val="216">Pelabuhan Ratu</a></li>
+                            <li><a href="#" data-val="217">Pemalang</a></li>
+                            <li><a href="#" data-val="218">Ponorogo</a></li>
+                            <li><a href="#" data-val="219">Probolinggo</a></li>
+                            <li><a href="#" data-val="220">Purbalingga</a></li>
+                            <li><a href="#" data-val="221">Purwakarta</a></li>
+                            <li><a href="#" data-val="222">Purwodadi</a></li>
+                            <li><a href="#" data-val="223">Purwokerto</a></li>
+                            <li><a href="#" data-val="224">Purworejo</a></li>
+                            <li><a href="#" data-val="225">Rangkasbitung</a></li>
+                            <li><a href="#" data-val="226">Rembang</a></li>
+                            <li><a href="#" data-val="227">Salatiga</a></li>
+                            <li><a href="#" data-val="228">Sampang</a></li>
+                            <li><a href="#" data-val="229">Semarang</a></li>
+                            <li><a href="#" data-val="230">Serang</a></li>
+                            <li><a href="#" data-val="231">Sidayu</a></li>
+                            <li><a href="#" data-val="232">Sidoarjo</a></li>
+                            <li><a href="#" data-val="233">Singaparna</a></li>
+                            <li><a href="#" data-val="234">Situbondo</a></li>
+                            <li><a href="#" data-val="235">Slawi</a></li>
+                            <li><a href="#" data-val="236">Sleman</a></li>
+                            <li><a href="#" data-val="237">Soreang</a></li>
+                            <li><a href="#" data-val="238">Sragen</a></li>
+                            <li><a href="#" data-val="239">Subang</a></li>
+                            <li><a href="#" data-val="240">Sukabumi</a></li>
+                            <li><a href="#" data-val="241">Sukoharjo</a></li>
+                            <li><a href="#" data-val="242">Sumber</a></li>
+                            <li><a href="#" data-val="243">Sumedang</a></li>
+                            <li><a href="#" data-val="244">Sumenep</a></li>
+                            <li><a href="#" data-val="245">Surabaya</a></li>
+                            <li><a href="#" data-val="246">Surakarta</a></li>
+                            <li><a href="#" data-val="247">Tasikmalaya</a></li>
+                            <li><a href="#" data-val="248">Tangerang</a></li>
+                            <li><a href="#" data-val="249">Tangerang Selatan</a></li>
+                            <li><a href="#" data-val="250">Tegal</a></li>
+                            <li><a href="#" data-val="251">Temanggung</a></li>
+                            <li><a href="#" data-val="252">Tigaraksa</a></li>
+                            <li><a href="#" data-val="253">Trenggalek</a></li>
+                            <li><a href="#" data-val="254">Tuban</a></li>
+                            <li><a href="#" data-val="255">Tulung Agung</a></li>
+                            <li><a href="#" data-val="256">Ungaran</a></li>
+                            <li><a href="#" data-val="257">Wates</a></li>
+                            <li><a href="#" data-val="258">Wlingi</a></li>
+                            <li><a href="#" data-val="259">Wonogiri</a></li>
+                            <li><a href="#" data-val="260">Wonosari</a></li>
+                            <li><a href="#" data-val="261">Wonosobo</a></li>
+                            <li><a href="#" data-val="262">Yogyakarta</a></li>
+                            <li><a href="#" data-val="263">Atambua</a></li>
+                            <li><a href="#" data-val="264">Baa</a></li>
+                            <li><a href="#" data-val="265">Badung</a></li>
+                            <li><a href="#" data-val="266">Bajawa</a></li>
+                            <li><a href="#" data-val="267">Bangli</a></li>
+                            <li><a href="#" data-val="268">Bima</a></li>
+                            <li><a href="#" data-val="269">Denpasar</a></li>
+                            <li><a href="#" data-val="270">Dompu</a></li>
+                            <li><a href="#" data-val="271">Ende</a></li>
+                            <li><a href="#" data-val="272">Gianyar</a></li>
+                            <li><a href="#" data-val="273">Kalabahi</a></li>
+                            <li><a href="#" data-val="274">Karangasem</a></li>
+                            <li><a href="#" data-val="275">Kefamenanu</a></li>
+                            <li><a href="#" data-val="276">Klungkung</a></li>
+                            <li><a href="#" data-val="277">Kupang</a></li>
+                            <li><a href="#" data-val="278">Labuhan Bajo</a></li>
+                            <li><a href="#" data-val="279">Larantuka</a></li>
+                            <li><a href="#" data-val="280">Lewoleba</a></li>
+                            <li><a href="#" data-val="281">Maumere</a></li>
+                            <li><a href="#" data-val="282">Mataram</a></li>
+                            <li><a href="#" data-val="283">Mbay</a></li>
+                            <li><a href="#" data-val="284">Negara</a></li>
+                            <li><a href="#" data-val="285">Praya</a></li>
+                            <li><a href="#" data-val="286">Raba</a></li>
+                            <li><a href="#" data-val="287">Ruteng</a></li>
+                            <li><a href="#" data-val="288">Selong</a></li>
+                            <li><a href="#" data-val="289">Singaraja</a></li>
+                            <li><a href="#" data-val="290">Soe</a></li>
+                            <li><a href="#" data-val="291">Sumbawa Besar</a></li>
+                            <li><a href="#" data-val="292">Tabanan</a></li>
+                            <li><a href="#" data-val="293">Taliwang</a></li>
+                            <li><a href="#" data-val="294">Tambolaka</a></li>
+                            <li><a href="#" data-val="295">Tanjung</a></li>
+                            <li><a href="#" data-val="296">Waibakul</a></li>
+                            <li><a href="#" data-val="297">Waikabubak</a></li>
+                            <li><a href="#" data-val="298">Waingapu</a></li>
+                            <li><a href="#" data-val="299">Pontianak</a></li>
+                            <li><a href="#" data-val="300">Samarinda</a></li>
+                            <li><a href="#" data-val="301">Banjarmasin</a></li>
+                            <li><a href="#" data-val="302">Balikpapan</a></li>
+                            <li><a href="#" data-val="303">Singkawang</a></li>
+                            <li><a href="#" data-val="304">Palangkaraya</a></li>
+                            <li><a href="#" data-val="305">Mempawah</a></li>
+                            <li><a href="#" data-val="306">Ketapang</a></li>
+                            <li><a href="#" data-val="307">Sintang</a></li>
+                            <li><a href="#" data-val="308">Tarakan</a></li>
+                            <li><a href="#" data-val="309">Putussibau</a></li>
+                            <li><a href="#" data-val="310">Sambas</a></li>
+                            <li><a href="#" data-val="311">Sampit</a></li>
+                            <li><a href="#" data-val="312">Banjarbaru</a></li>
+                            <li><a href="#" data-val="313">Barabai</a></li>
+                            <li><a href="#" data-val="314">Batang Tarang</a></li>
+                            <li><a href="#" data-val="315">Batulicin</a></li>
+                            <li><a href="#" data-val="316">Bengkayang</a></li>
+                            <li><a href="#" data-val="317">Bontang</a></li>
+                            <li><a href="#" data-val="318">Buntok</a></li>
+                            <li><a href="#" data-val="319">Kandangan</a></li>
+                            <li><a href="#" data-val="320">Kotabaru</a></li>
+                            <li><a href="#" data-val="321">Kuala Kapuas</a></li>
+                            <li><a href="#" data-val="322">Kuala Kurun</a></li>
+                            <li><a href="#" data-val="323">Kuala Pembuang</a></li>
+                            <li><a href="#" data-val="324">Malinau</a></li>
+                            <li><a href="#" data-val="325">Marabahan</a></li>
+                            <li><a href="#" data-val="326">Martapura</a></li>
+                            <li><a href="#" data-val="327">Muara Teweh</a></li>
+                            <li><a href="#" data-val="328">Nanga Bulik</a></li>
+                            <li><a href="#" data-val="329">Nanga Pinoh</a></li>
+                            <li><a href="#" data-val="330">Ngabang</a></li>
+                            <li><a href="#" data-val="331">Nunukan</a></li>
+                            <li><a href="#" data-val="332">Pangkalan Bun</a></li>
+                            <li><a href="#" data-val="333">Paringin</a></li>
+                            <li><a href="#" data-val="334">Pelaihari</a></li>
+                            <li><a href="#" data-val="335">Penajam</a></li>
+                            <li><a href="#" data-val="336">Pulang Pisau</a></li>
+                            <li><a href="#" data-val="337">Purukcahu</a></li>
+                            <li><a href="#" data-val="338">Rantau</a></li>
+                            <li><a href="#" data-val="339">Sangatta</a></li>
+                            <li><a href="#" data-val="340">Sekadau</a></li>
+                            <li><a href="#" data-val="341">Sendawar</a></li>
+                            <li><a href="#" data-val="342">Sukadana</a></li>
+                            <li><a href="#" data-val="343">Sukamara</a></li>
+                            <li><a href="#" data-val="344">Sungai Raya</a></li>
+                            <li><a href="#" data-val="345">Tamiang Layang</a></li>
+                            <li><a href="#" data-val="346">Tanah Grogot</a></li>
+                            <li><a href="#" data-val="347">Tanjung</a></li>
+                            <li><a href="#" data-val="348">Tanjung Selor</a></li>
+                            <li><a href="#" data-val="349">Tanjung Redeb</a></li>
+                            <li><a href="#" data-val="350">Tenggarong</a></li>
+                            <li><a href="#" data-val="351">Tideng Pale</a></li>
+                            <li><a href="#" data-val="352">Airmadidi</a></li>
+                            <li><a href="#" data-val="353">Ampana</a></li>
+                            <li><a href="#" data-val="354">Amurang</a></li>
+                            <li><a href="#" data-val="355">Andolo</a></li>
+                            <li><a href="#" data-val="356">Banggai</a></li>
+                            <li><a href="#" data-val="357">Bantaeng</a></li>
+                            <li><a href="#" data-val="358">Barru</a></li>
+                            <li><a href="#" data-val="359">Bau-Bau</a></li>
+                            <li><a href="#" data-val="360">Benteng</a></li>
+                            <li><a href="#" data-val="361">Bitung</a></li>
+                            <li><a href="#" data-val="362">Bolaang Uki</a></li>
+                            <li><a href="#" data-val="363">Boroko</a></li>
+                            <li><a href="#" data-val="364">Bulukumba</a></li>
+                            <li><a href="#" data-val="365">Bungku</a></li>
+                            <li><a href="#" data-val="366">Buol</a></li>
+                            <li><a href="#" data-val="367">Buranga</a></li>
+                            <li><a href="#" data-val="368">Donggala</a></li>
+                            <li><a href="#" data-val="369">Enrekang</a></li>
+                            <li><a href="#" data-val="370">Gorontalo</a></li>
+                            <li><a href="#" data-val="371">Jeneponto</a></li>
+                            <li><a href="#" data-val="372">Kawangkoan</a></li>
+                            <li><a href="#" data-val="373">Kendari</a></li>
+                            <li><a href="#" data-val="374">Kolaka</a></li>
+                            <li><a href="#" data-val="375">Kotamobagu</a></li>
+                            <li><a href="#" data-val="376">Kwandang</a></li>
+                            <li><a href="#" data-val="377">Lasusua</a></li>
+                            <li><a href="#" data-val="378">Luwuk</a></li>
+                            <li><a href="#" data-val="379">Majene</a></li>
+                            <li><a href="#" data-val="380">Makale</a></li>
+                            <li><a href="#" data-val="381">Makassar</a></li>
+                            <li><a href="#" data-val="382">Malili</a></li>
+                            <li><a href="#" data-val="383">Mamasa</a></li>
+                            <li><a href="#" data-val="384">Mamuju</a></li>
+                            <li><a href="#" data-val="385">Manado</a></li>
+                            <li><a href="#" data-val="386">Marisa</a></li>
+                            <li><a href="#" data-val="387">Maros</a></li>
+                            <li><a href="#" data-val="388">Masamba</a></li>
+                            <li><a href="#" data-val="389">Melonguane</a></li>
+                            <li><a href="#" data-val="390">Ondong Siau</a></li>
+                            <li><a href="#" data-val="391">Palopo</a></li>
+                            <li><a href="#" data-val="392">Palu</a></li>
+                            <li><a href="#" data-val="393">Pangkajene</a></li>
+                            <li><a href="#" data-val="394">Pare-Pare</a></li>
+                            <li><a href="#" data-val="395">Parigi</a></li>
+                            <li><a href="#" data-val="396">Pasangkayu</a></li>
+                            <li><a href="#" data-val="397">Pinrang</a></li>
+                            <li><a href="#" data-val="398">Polewali</a></li>
+                            <li><a href="#" data-val="399">Poso</a></li>
+                            <li><a href="#" data-val="400">Raha</a></li>
+                            <li><a href="#" data-val="401">Rantepao</a></li>
+                            <li><a href="#" data-val="402">Ratahan</a></li>
+                            <li><a href="#" data-val="403">Rumbia</a></li>
+                            <li><a href="#" data-val="404">Sengkang</a></li>
+                            <li><a href="#" data-val="405">Sidenreng</a></li>
+                            <li><a href="#" data-val="406">Sigi Biromaru</a></li>
+                            <li><a href="#" data-val="407">Sinjai</a></li>
+                            <li><a href="#" data-val="408">Sunggu Minasa</a></li>
+                            <li><a href="#" data-val="409">Suwawa</a></li>
+                            <li><a href="#" data-val="410">Tahuna</a></li>
+                            <li><a href="#" data-val="411">Takalar</a></li>
+                            <li><a href="#" data-val="412">Tilamuta</a></li>
+                            <li><a href="#" data-val="413">Toli Toli</a></li>
+                            <li><a href="#" data-val="414">Tomohon</a></li>
+                            <li><a href="#" data-val="415">Tondano</a></li>
+                            <li><a href="#" data-val="416">Tutuyan</a></li>
+                            <li><a href="#" data-val="417">Unaaha</a></li>
+                            <li><a href="#" data-val="418">Wangi Wangi</a></li>
+                            <li><a href="#" data-val="419">Wanggudu</a></li>
+                            <li><a href="#" data-val="420">Watampone</a></li>
+                            <li><a href="#" data-val="421">Watan Soppeng</a></li>
+                            <li><a href="#" data-val="422">Cliquers</a></li>
+                            <li><a href="#" data-val="423">Libuo Palma</a></li>
+                            <li><a href="#" data-val="424">Agats</a></li>
+                            <li><a href="#" data-val="425">Ambon</a></li>
+                            <li><a href="#" data-val="426">Banda</a></li>
+                            <li><a href="#" data-val="427">Biak</a></li>
+                            <li><a href="#" data-val="428">Bintuni</a></li>
+                            <li><a href="#" data-val="429">Botawa</a></li>
+                            <li><a href="#" data-val="430">Burmeso</a></li>
+                            <li><a href="#" data-val="431">Dataran Hunimoa</a></li>
+                            <li><a href="#" data-val="432">Dataran Hunipopu</a></li>
+                            <li><a href="#" data-val="433">Dobo</a></li>
+                            <li><a href="#" data-val="434">Elelim</a></li>
+                            <li><a href="#" data-val="435">Enarotali</a></li>
+                            <li><a href="#" data-val="436">Fak Fak</a></li>
+                            <li><a href="#" data-val="437">Fef</a></li>
+                            <li><a href="#" data-val="438">Ilaga</a></li>
+                            <li><a href="#" data-val="439">Jailolo</a></li>
+                            <li><a href="#" data-val="440">Jayapura</a></li>
+                            <li><a href="#" data-val="441">Kaimana</a></li>
+                            <li><a href="#" data-val="442">Karubaga</a></li>
+                            <li><a href="#" data-val="443">Kenyam</a></li>
+                            <li><a href="#" data-val="444">Kepi</a></li>
+                            <li><a href="#" data-val="445">Kigamani</a></li>
+                            <li><a href="#" data-val="446">Kisar</a></li>
+                            <li><a href="#" data-val="447">Kobakma</a></li>
+                            <li><a href="#" data-val="448">Kota Mulia</a></li>
+                            <li><a href="#" data-val="449">Kumurkek</a></li>
+                            <li><a href="#" data-val="450">Labuha</a></li>
+                            <li><a href="#" data-val="451">Larat</a></li>
+                            <li><a href="#" data-val="452">Leksula</a></li>
+                            <li><a href="#" data-val="453">Maba</a></li>
+                            <li><a href="#" data-val="454">Manokwari</a></li>
+                            <li><a href="#" data-val="455">Masohi</a></li>
+                            <li><a href="#" data-val="456">Merauke</a></li>
+                            <li><a href="#" data-val="457">Morotai Selatan</a></li>
+                            <li><a href="#" data-val="458">Nabire</a></li>
+                            <li><a href="#" data-val="459">Namlea</a></li>
+                            <li><a href="#" data-val="460">Namrole</a></li>
+                            <li><a href="#" data-val="461">Oksibil</a></li>
+                            <li><a href="#" data-val="462">Oobo</a></li>
+                            <li><a href="#" data-val="463">Passo</a></li>
+                            <li><a href="#" data-val="464">Piru</a></li>
+                            <li><a href="#" data-val="465">Rasiei</a></li>
+                            <li><a href="#" data-val="466">Sanana</a></li>
+                            <li><a href="#" data-val="467">Saparua</a></li>
+                            <li><a href="#" data-val="468">Sarmi</a></li>
+                            <li><a href="#" data-val="469">Saumlaki</a></li>
+                            <li><a href="#" data-val="470">Sentani</a></li>
+                            <li><a href="#" data-val="471">Serui</a></li>
+                            <li><a href="#" data-val="472">Sorendiweri</a></li>
+                            <li><a href="#" data-val="473">Sorong</a></li>
+                            <li><a href="#" data-val="474">Sugapa</a></li>
+                            <li><a href="#" data-val="475">Sumohai</a></li>
+                            <li><a href="#" data-val="476">Tanah Merah</a></li>
+                            <li><a href="#" data-val="477">Teminabuan</a></li>
+                            <li><a href="#" data-val="478">Ternate</a></li>
+                            <li><a href="#" data-val="479">Tiakur</a></li>
+                            <li><a href="#" data-val="480">Tidore</a></li>
+                            <li><a href="#" data-val="481">Tigi</a></li>
+                            <li><a href="#" data-val="482">Timika</a></li>
+                            <li><a href="#" data-val="483">Tiom</a></li>
+                            <li><a href="#" data-val="484">Tobelo</a></li>
+                            <li><a href="#" data-val="485">Tual</a></li>
+                            <li><a href="#" data-val="486">Waisai</a></li>
+                            <li><a href="#" data-val="487">Wamena</a></li>
+                            <li><a href="#" data-val="488">Waris</a></li>
+                            <li><a href="#" data-val="489">Weda</a></li>
+
+                        </ul>
+                        <label for="text-18">Kota:</label>
+                        <input type="hidden" value="0" id="val-kota3" name="kota">
+                        <input type="text" name="text-18" id="text-kota3" value="cari kota" disabled="disabled">
+
+
+                        <input type="submit" data-theme="a" value="Submit">
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <script src="assets/js/config.js"></script>
+        <script src="assets/js/jquery.js"></script>
+        <script src="assets/js/jquery.mobile-1.3.2.js"></script>
+        <script src="assets/js/main.js"></script>
+    </body>
+</html>

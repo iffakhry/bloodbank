@@ -1,0 +1,15 @@
+{
+  "name": "BloodBank",
+  "developer": {
+    "name": "Seven Group",
+    "url": "http://about.me/sevengroup"
+  },
+   "icons": {
+    "128": "/assets/images/blood.jpg"
+  },
+  "launch_path": "/index.html",
+    "description": "Aplikasi Pencarian Darah",
+	"fullscreen":"true",
+	"orientation":["portrait"],
+  "default_locale": "en"
+}
